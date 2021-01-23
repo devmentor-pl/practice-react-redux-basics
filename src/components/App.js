@@ -11,6 +11,7 @@ import Task05 from "./../../05/Task05";
 const initState = {
   message: "Działa!",
   time: new Date(),
+  users: [],
 };
 
 const reducer = (state = initState, action) => {
@@ -20,20 +21,33 @@ const reducer = (state = initState, action) => {
         ...state,
         time: new Date(),
       };
+    case "addUser":
+      return {
+        ...state,
+        users: [...state.users, action.payload.user],
+      };
+    case "removeUser":
+      return {
+        ...state,
+        users: state.users.filter(user => user.id !== action.payload.userId),
+      };
     default:
       return state;
   }
 };
 
-const store = createStore(reducer);
+const store = createStore(
+  reducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 const App = () => {
   return (
     <Provider store={store}>
       {/* <Task01 /> */}
       {/* <Task02 /> */}
-      <Task03 />
-      {/* <Task04 /> */}
+      {/* <Task03 /> */}
+      <Task04 />
       {/* <Task05 /> */}
     </Provider>
   );
