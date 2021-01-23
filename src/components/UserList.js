@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { addUserAction } from "./actions/users";
+import { addUserAction } from "../actions/users";
 
 import UserItem from "./UserItem";
 
