@@ -2,7 +2,7 @@
 
 Redux jest jednym z najpopularniejszych rozwiązań wspomagającym zarządzanie stanem w aplikacji. Nie musi to być koniecznie React. Umiejetność korzystania z tego rozwiązania jest bardzo dużym atutem podczas poszukiwan pracy jako React Developer.
 
-Sprawdź czy Twoja wiedza z tego zakresu jest wystarczająca do rozpoczęcia przygody z Redux na poziomie podstawowym.
+Sprawdź, czy Twoja wiedza z tego zakresu jest wystarczająca do rozpoczęcia przygody z Redux na poziomie podstawowym.
 
 Konfiguracja dla Webpack-a jest już przygotowana. Wystarczy zainstalować zależności wykorzystując komendę `npm i` oraz uruchomić Webpack-a przy pomocy: `npm start`. Całość powinna zostać działać pod adresem `http://localhost:8080`.
 
