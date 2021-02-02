@@ -27,9 +27,9 @@ const reducer = (state = initState, action) => {
             }
         case 'removeUser':
             return {
-                ...state,
-                users: action.payload.updatedUserList
-            }
+				...state,
+				users: state.users.filter((user) => user.id !== action.payload),
+			};
         default: return state
     }
 };

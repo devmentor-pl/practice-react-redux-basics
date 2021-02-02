@@ -19,54 +19,56 @@ function addUserAction(newUser) {
 }
 
 class UserList extends React.Component {
-    state = {
-        user: '',
-        usersIDs: []
-    }
+	state = {
+		user: '',
+	};
 
-    handleOnChange = (e) => {
-        this.setState({user: e.target.value})
-    }
-    
-    handleAddUser = (e) => {
-        e.preventDefault();
-        const id = this.setID();
-        if(this.state.user === '') {
-            alert('Wpisz nazwę użytkownika.')
-        } else {
-            this.props.addUser({userName: this.state.user, id})
-            this.setState({user: ''})
-        }
-    }
-    
-    setID = () => {
-        const IDsGroup = this.state.usersIDs;
-        const id = IDsGroup.length !== 0 ? Math.max(...IDsGroup) + 1 : 0;
-        this.setState({usersIDs: [...IDsGroup, id]});
-        return id
-    }
+	handleOnChange = (e) => {
+		this.setState({ user: e.target.value });
+	};
 
-    removeID = (idToRemove) => {
-        const IDsGroup = this.state.usersIDs;
-        console.log(idToRemove)
-    }
+	handleAddUser = (e) => {
+		e.preventDefault();
+		const id = this.setID();
+		if (this.state.user === '') {
+			alert('Wpisz nazwę użytkownika.');
+		} else {
+			this.props.addUser({ userName: this.state.user, id });
+			this.setState({ user: '' });
+		}
+	};
 
-    render() {
-        return (
-            <>
-                <form onSubmit={e => this.handleAddUser(e)}>
-                    <div>
-                        <input onChange={e => this.handleOnChange(e)} value={this.state.user}/>
-                        <input type="submit" value="dodaj"/>
-                    </div>
-                </form>
+	setID = () => {
+		const IDsGroup = this.props.users.map((user) => user.id);
+		const id = IDsGroup.length !== 0 ? Math.max(...IDsGroup) + 1 : 0;
+		return id;
+	};
 
-                <ul>
-                    {this.props.users.map(user => <UserItem key={user.id} id={user.id} name={user.userName} onRemove={this.removeID}/> )}
-                </ul>
-            </>
-        )
-    }
+	render() {
+		return (
+			<>
+				<form onSubmit={(e) => this.handleAddUser(e)}>
+					<div>
+						<input
+							onChange={(e) => this.handleOnChange(e)}
+							value={this.state.user}
+						/>
+						<input type="submit" value="dodaj" />
+					</div>
+				</form>
+
+				<ul>
+					{this.props.users.map((user) => (
+						<UserItem
+							key={user.id}
+							id={user.id}
+							name={user.userName}
+						/>
+					))}
+				</ul>
+			</>
+		);
+	}
 }
 
 

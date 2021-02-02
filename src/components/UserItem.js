@@ -1,25 +1,20 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
-const removeUserAction = (updatedUsers) => {
+const removeUserAction = (id) => {
 	return {
 		type: 'removeUser',
-		payload: { updatedUsers: updatedUsers },
+		payload: id,
 	};
 };
 
-const UserItem = ({ name = 'Default Name', id = -1, onRemove }) => {
-	const users = useSelector(state => state.users);
-	
-	function handleRemove(id) {
-		// onRemove(id);
-		const updatedUsers = users.filter(user => user.id !== id) // przenieść do App
-		useDispatch(removeUserAction(updatedUsers))
-	}
+const UserItem = ({ name = 'Default Name', id = -1 }) => {
+	const dispatch = useDispatch();
 
 	return (
 		<li id={id}>
-			{name} <button onClick={() => handleRemove(id)}>usuń</button>
+			{name}
+			<button onClick={() => dispatch(removeUserAction(id))}>usuń</button>
 		</li>
 	);
 };
