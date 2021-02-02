@@ -1,22 +1,14 @@
 import React from 'react';
 import {connect} from 'react-redux'
 import UserItem from './UserItem';
+import { addUser } from '../actions';
 
 const mapStateToProps = (state, props) => {
     return {
         users: state.users,
     }
 }
-const mapActionToProps = {
-    addUser: addUserAction,
-}
-
-function addUserAction(newUser) {
-    return {
-        type: 'addUser',
-        payload: {newUser: newUser}
-    }
-}
+const mapActionToProps = { addUser };
 
 class UserList extends React.Component {
 	state = {
