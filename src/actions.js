@@ -17,3 +17,9 @@ export function removeUser(id) {
 		payload: id,
 	};
 }
+
+export function removeAllUsers() {
+	return {
+		type: 'removeAllUsers',
+	};
+}
