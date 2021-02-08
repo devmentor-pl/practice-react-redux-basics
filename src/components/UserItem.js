@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { deleteUserAction } from './actions'
+import { deleteUserAction } from '../actions'
 
 const UserItem = ({name = 'Default Name', id = -1}) => {
 

@@ -3,7 +3,7 @@ import React from 'react';
 import UserItem from './UserItem';
 import uuid from 'react-uuid'
 import {connect} from 'react-redux'
-import { addUser } from './actions';
+import { addUser } from '../actions';
 
  
 class UserList extends React.Component {
@@ -40,7 +40,7 @@ class UserList extends React.Component {
         const { user } = this.state;
         return (
             <>
-                <form  >
+                <form>
                     <div>
                         <input 
                         placeholder="Enter name"
