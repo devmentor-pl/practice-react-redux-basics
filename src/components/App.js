@@ -9,19 +9,39 @@ import Task04 from './../../04/Task04';
 import Task05 from './../../05/Task05';
 
 const App = () => {
-    const initialState = { message: 'dziala!', time: new Date() };
+    const initialState = {
+        message: 'dziala!',
+        time: new Date(),
+        users: [
+            {
+                name: 'martin',
+                id: 2,
+            },
+            {
+                name: 'dada',
+                id: 3,
+            },
+            {
+                name: 'eqeq',
+                id: 4,
+            },
+        ],
+    };
 
     const updateTime = () => {
-        console.log('pd');
-        return { time: '21:37' };
+        return { ...state, time: new Date() };
     };
 
     const reducer = (state = initialState, action) => {
         switch (action.type) {
             case 'getCurrentTime':
-                console.log('yey');
                 return { ...state, time: new Date() };
             // updateTime() // mogę to obsłuyć poza reduktorem?
+            case 'ADD_USER':
+                return {
+                    ...state,
+                    users: [...state.users, action.payload.user],
+                };
             default:
                 return state;
         }
@@ -37,7 +57,7 @@ const App = () => {
             <Task01 />
             <Task02 />
             <Task03 />
-            {/* <Task04 /> */}
+            <Task04 />
             {/* <Task05 /> */}
         </Provider>
     );
