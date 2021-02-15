@@ -1,9 +1,16 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { deleteUser } from './../actions';
 
-const UserItem = ({name = 'Default Name', id = -1}) => {
+const UserItem = ({ name = 'Default Name', id = -1 }) => {
+    const dispatch = useDispatch();
+    console.log(id);
     return (
-        <li>{name} <button>usuń</button></li>
-    )
-}
+        <li>
+            {name}{' '}
+            <button onClick={(e) => dispatch(deleteUser(id))}>usuń</button>
+        </li>
+    );
+};
 
 export default UserItem;

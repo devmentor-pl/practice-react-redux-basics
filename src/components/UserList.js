@@ -1,7 +1,6 @@
 import React from 'react';
 import UserItem from './UserItem';
 import { connect } from 'react-redux';
-
 import { addUser } from './../actions';
 
 class UserList extends React.Component {
@@ -37,7 +36,9 @@ class UserList extends React.Component {
                 </form>
 
                 <ul>
-                    <UserItem />
+                    {this.props.users.map(({ name, id }) => {
+                        return <UserItem key={id} name={name} id={id} />;
+                    })}
                 </ul>
             </>
         );

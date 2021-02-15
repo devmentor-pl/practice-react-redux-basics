@@ -12,20 +12,7 @@ const App = () => {
     const initialState = {
         message: 'dziala!',
         time: new Date(),
-        users: [
-            {
-                name: 'martin',
-                id: 2,
-            },
-            {
-                name: 'dada',
-                id: 3,
-            },
-            {
-                name: 'eqeq',
-                id: 4,
-            },
-        ],
+        users: [],
     };
 
     const updateTime = () => {
@@ -41,6 +28,13 @@ const App = () => {
                 return {
                     ...state,
                     users: [...state.users, action.payload.user],
+                };
+            case 'DELETE_USER':
+                return {
+                    ...state,
+                    users: state.users.filter(
+                        (user) => user.id !== action.payload
+                    ),
                 };
             default:
                 return state;
