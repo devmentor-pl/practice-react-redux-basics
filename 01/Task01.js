@@ -9,7 +9,6 @@ const Task01 = () => {
     const subject = new Subject();
 
     const setEventTime = ({ timeStamp }) => {
-        console.log('🚀 ~ setEventTime ~ timeStamp', timeStamp);
         setTime(parseInt(timeStamp / 1000));
     };
 

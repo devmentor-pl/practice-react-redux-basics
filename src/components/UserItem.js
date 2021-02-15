@@ -4,7 +4,6 @@ import { deleteUser } from './../actions';
 
 const UserItem = ({ name = 'Default Name', id = -1 }) => {
     const dispatch = useDispatch();
-    console.log(id);
     return (
         <li>
             {name}{' '}

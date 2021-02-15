@@ -12,3 +12,8 @@ export const deleteUser = (userId) => {
         payload: userId,
     };
 };
+export const getCurrentTime = () => {
+    return {
+        type: 'GET_CURRENT_TIME',
+    };
+};
