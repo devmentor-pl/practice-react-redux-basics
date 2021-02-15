@@ -17,3 +17,8 @@ export const getCurrentTime = () => {
         type: 'GET_CURRENT_TIME',
     };
 };
+export const deleteAllUsers = () => {
+    return {
+        type: 'DELETE_ALL_USERS',
+    };
+};
