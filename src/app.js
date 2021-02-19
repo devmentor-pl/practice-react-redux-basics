@@ -8,6 +8,7 @@ import { Provider } from 'react-redux';
 const INITIAL_STATE = {
   message: 'Działa!',
   time: new Date(),
+  users: [],
 };
 
 const reducer = (state = INITIAL_STATE, action) => {
@@ -16,6 +17,16 @@ const reducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         time: new Date(),
+      };
+    case 'addUser':
+      return {
+        ...state,
+        users: [...state.users, action.user],
+      };
+    case 'deleteUser':
+      return {
+        ...state,
+        users: state.users.filter((user) => user.id !== action.id),
       };
     default:
       return state;
