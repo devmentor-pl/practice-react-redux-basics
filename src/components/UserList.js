@@ -1,7 +1,7 @@
 import React from 'react';
 import UserItem from './UserItem';
 import { connect } from 'react-redux';
-import addUser from '../../04/actions';
+import actions from '../app/tasks/duck/actions';
 
 class UserList extends React.Component {
   inputRef = React.createRef();
@@ -42,7 +42,7 @@ const mapStateToProps = (state, props) => {
 };
 
 const mapActionToProps = {
-  addUser: addUser,
+  addUser: actions.addUser,
 };
 
 export default connect(mapStateToProps, mapActionToProps)(UserList);
