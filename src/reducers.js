@@ -8,7 +8,6 @@ const reducer = (state = initialState, action) => {
     switch (action.type) {
         case 'GET_CURRENT_TIME':
             return { ...state, time: new Date() };
-        // updateTime() // mogę to obsłuyć poza reduktorem?
         case 'ADD_USER':
             return {
                 ...state,
