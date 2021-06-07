@@ -1,9 +1,31 @@
-import React from 'react';
+import React from "react";
+import { deleteUser } from "../libs/actions";
+import { connect } from "react-redux";
+const UserItem = (props) => {
+  const { users, name, id } = props;
+  return (
+    <li>
+      {name}{" "}
+      <button
+        onClick={(e) => {
+          e.preventDefault();
+          props.delete(users, id);
+        }}
+      >
+        usuń
+      </button>
+    </li>
+  );
+};
 
-const UserItem = ({name = 'Default Name', id = -1}) => {
-    return (
-        <li>{name} <button>usuń</button></li>
-    )
-}
+const mapActionToProps = {
+  delete: deleteUser,
+};
 
-export default UserItem;
+const mapStateToProps = (state, props) => {
+  return {
+    users: state.users,
+  };
+};
+
+export default connect(mapStateToProps, mapActionToProps)(UserItem);
