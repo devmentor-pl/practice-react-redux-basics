@@ -1,5 +1,5 @@
 import React from "react";
-import { deleteUser } from "../libs/actions";
+import { deleteUser } from "../actions";
 import { connect } from "react-redux";
 const UserItem = (props) => {
   const { users, name, id } = props;

@@ -6,7 +6,7 @@ const initState = {
 const reducer = (state = initState, action) => {
   switch (action.type) {
     case "getCurrentTime":
-      return { message: "Działa", time: new Date() };
+      return { ...state, message: "Działa", time: new Date() };
     case "addUser":
       return { ...state, users: [...state.users, action.user] };
     case "deleteUser":
