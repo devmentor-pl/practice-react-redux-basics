@@ -1,7 +1,7 @@
 import React from "react";
 import UserItem from "./UserItem";
 import UsersContainer from "./UsersContainer";
-import { addUser } from "../app";
+import { addUser, reset } from "../users/duck/actions";
 
 class UserList extends React.Component {
     state = { user: "" };
@@ -36,6 +36,10 @@ class UserList extends React.Component {
                 <ul>
                     <UsersContainer />
                 </ul>
+
+                <button type="button" onClick={() => store.dispatch(reset())}>
+                    Delete all users
+                </button>
             </>
         );
     }

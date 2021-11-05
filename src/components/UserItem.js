@@ -1,5 +1,5 @@
 import React from "react";
-import { deleteUser } from "../app";
+import { deleteUser } from "../users/duck/actions";
 
 const UserItem = (props) => {
     return (
