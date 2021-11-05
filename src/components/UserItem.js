@@ -1,9 +1,15 @@
-import React from 'react';
+import React from "react";
+import { deleteUser } from "../app";
 
-const UserItem = ({name = 'Default Name', id = -1}) => {
+const UserItem = (props) => {
     return (
-        <li>{name} <button>usuń</button></li>
-    )
-}
+        <li>
+            {props.name}
+            <button onClick={() => store.dispatch(deleteUser(props.id))}>
+                usuń
+            </button>
+        </li>
+    );
+};
 
 export default UserItem;
