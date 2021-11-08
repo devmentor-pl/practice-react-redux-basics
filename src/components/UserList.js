@@ -1,6 +1,6 @@
 import React from "react";
-import UserItem from "./UserItem";
 import UsersContainer from "./UsersContainer";
+import { connect } from "react-redux";
 import { addUser, reset } from "../users/duck/actions";
 
 class UserList extends React.Component {
@@ -20,7 +20,7 @@ class UserList extends React.Component {
                 <form
                     onSubmit={(e) => {
                         e.preventDefault();
-                        store.dispatch(addUser(this.state.user));
+                        this.props.add(this.state.user);
                         this.reset();
                     }}
                 >
@@ -37,7 +37,7 @@ class UserList extends React.Component {
                     <UsersContainer />
                 </ul>
 
-                <button type="button" onClick={() => store.dispatch(reset())}>
+                <button type="button" onClick={() => this.props.reset()}>
                     Delete all users
                 </button>
             </>
@@ -45,4 +45,9 @@ class UserList extends React.Component {
     }
 }
 
-export default UserList;
+const mapActionToProps = {
+    add: addUser,
+    reset: reset,
+};
+
+export default connect(null, mapActionToProps)(UserList);
