@@ -16,4 +16,14 @@ const removeUser = id => {
     }
 }
 
-export { addNewUser, removeUser };
+const removeAll = () => {
+    return {
+        type: 'removeAll',
+        payload: {
+            users: []
+        }
+    }
+}
+
+
+export { addNewUser, removeUser, removeAll };

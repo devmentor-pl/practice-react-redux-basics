@@ -15,7 +15,10 @@ const reducer = (state = initState, action) => {
         case 'removeUser':
             const { id: numberId } = action.payload;
             const list = state.users.filter(user => user.id !== numberId);
-            return { ...state, users: list }
+            return { ...state, users: list };
+        case 'removeAll':
+            const { users } = action.payload;
+            return { ...state, users }
         default:
             return state;
     };
