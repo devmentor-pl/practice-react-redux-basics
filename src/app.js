@@ -1,13 +1,16 @@
 // ./src/app.js
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux'
-import App from './components/App';
 import { createStore } from 'redux';
+import App from './components/App';
+import { Provider } from 'react-redux';
+import reducer from './reducers';
 
-const store = createStore(() => {
-  return { message: 'Działa!' }
-});
+const store = createStore(
+  reducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__
+  && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 ReactDOM.render(
   <Provider store={ store }>
