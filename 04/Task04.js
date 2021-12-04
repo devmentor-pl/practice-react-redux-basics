@@ -9,7 +9,6 @@ const Task04 = () => {
             <UserList />
         </section>
     );
-}
+};
 
 export default Task04;
-
