@@ -8,7 +8,6 @@ class Subject {
             this.observersList.push(callback);
             return true;
         }
-
         return false;
     }
 
