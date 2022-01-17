@@ -1,20 +1,20 @@
 class Subject {
-    constructor() {
-        this.observersList = [];
+  constructor() {
+    this.observersList = [];
+  }
+
+  subscribe(callback) {
+    if (typeof callback === 'function') {
+      this.observersList.push(callback);
+      return true;
     }
 
-    subscribe(callback) {
-        if(typeof callback === 'function') {
-            this.observersList.push(callback);
-            return true;
-        }
+    return false;
+  }
 
-        return false;
-    }
-
-    notify(data) {
-        this.observersList.forEach(callback => callback(data));
-    }
+  notify(data) {
+    this.observersList.forEach((callback) => callback(data));
+  }
 }
 
 export default Subject;
