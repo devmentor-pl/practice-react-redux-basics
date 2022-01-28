@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Subject from './../src/libs/Subject';
+const subject = new Subject();
+
 
 const Task01 = () => {
     const [time, setTime] = useState(0);
@@ -17,8 +19,6 @@ const Task01 = () => {
     const setEventCursorPosition = ({pageX, pageY}) => {
         setCursorPosition(`[${pageX},${pageY}]`);
     }
-
-    const subject = new Subject();
 
     subject.subscribe(setEventTime);
     subject.subscribe(setEventTagName);
