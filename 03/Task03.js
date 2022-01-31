@@ -6,7 +6,12 @@ const Task03 = () => {
     const dispatch = useDispatch();
 
     const handleButton = () => {
-        dispatch( {type: 'getCurrentTime'} )
+        dispatch( {
+            type: 'getCurrentTime',
+            payload: {
+                time:time,
+            }
+        } )
     }
 
     console.log(dispatch);
