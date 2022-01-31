@@ -6,21 +6,15 @@ import Task02 from './../../02/Task02';
 import Task03 from './../../03/Task03';
 import Task04 from './../../04/Task04';
 import Task05 from './../../05/Task05';
+import {reducer} from './reducer';
 
-
-const reducer = () =>{
-    return {
-        message: 'Działa!',
-        time: new Date()
-    };
-}
 
 const store = createStore(
     reducer, 
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 
-
+console.log 
 const App = () => {
     return (
         <React.StrictMode>
@@ -28,7 +22,7 @@ const App = () => {
                 <Task01 />
                 <Task02/>
                 <Task03 />
-                {/* <Task04 /> */}
+                <Task04 />
                 {/* <Task05 /> */}
             </Provider>
         </React.StrictMode>
@@ -36,3 +30,26 @@ const App = () => {
 }
 
 export default App;
+
+
+
+// const init = {
+//     message: 'Działa!',
+//     time: new Date(),
+//     users:[]
+// }
+
+// const state =  store.getState
+// const reducer = (state=init, action) =>{
+//     const {type} = action;
+//     console.log(type)
+//     switch (type) {
+//         case 'getCurrentTime':
+//            return  {...state, time: payload}
+//     }
+// }
+
+// const store = createStore(
+//     reducer, 
+//     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+// )

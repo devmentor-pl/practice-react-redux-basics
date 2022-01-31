@@ -2,15 +2,12 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 const Task03 = () => {
-    const time = useSelector(({time = null}) => time);
+    const time = useSelector(({time=null}) => time);
     const dispatch = useDispatch();
 
     const handleButton = () => {
         dispatch( {
             type: 'getCurrentTime',
-            payload: {
-                time:time,
-            }
         } )
     }
 
