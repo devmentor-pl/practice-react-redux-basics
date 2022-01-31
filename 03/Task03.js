@@ -14,10 +14,7 @@ const Task03 = () => {
         } )
     }
 
-    console.log(dispatch);
-
-
-    return (
+     return (
         <section>
             <h1>Task 3</h1>
             <div>
