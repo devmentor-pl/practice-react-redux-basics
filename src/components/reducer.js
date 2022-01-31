@@ -9,8 +9,9 @@ export const reducer = (state=init, action) => {
         case 'getCurrentTime':
            return  {...state, time: new Date()}
         case 'addUser':
-            const {user} = action.payload
-            return  {...state, users:[...state.users, user ]}
+            const {user, id} = action.payload
+            const newUser = {name: user, id: id}
+            return  {...state, users:[...state.users, newUser ]}
         default:
             return state;
     }

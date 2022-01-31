@@ -1,20 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
 import UserItem from './UserItem';
-import {useDispatch } from 'react-redux';
+import {useDispatch, connect } from 'react-redux';
+import {addUser} from './../actions/users';
 
 class UserList extends React.Component {
-    constructor() {
-        this.dispatch = useDispatch();
-    } 
+    state = {inputValue: ''}
 
-    handleSubmit = e=> {
+    getValue = e => {
+        e.persist();
+        this.setState(()=> {
+            return {inputValue: e.target.value}
+        })
+    }
+    
+    handleSubmit = e => {
         e.preventDefault();
-        this.dispatch( {
-            type: 'onChange',
-            payload: { value:e.target.value },
-
-        } )
-
+        const {inputValue} = this.state;
+        return this.props.onSubmit(inputValue)
     }
     
     render() {
@@ -22,17 +24,26 @@ class UserList extends React.Component {
             <>
                 <form onSubmit={this.handleSubmit}>
                     <div>
-                        <input onChange={dispatchEvent()}/>
+                        <input onChange={this.getValue}/>
                         <input type="submit" value="dodaj" />
                     </div>
                 </form>
-
-                <ul>
-                    <UserItem />
+                <ul> 
+                    {this.props.users.map((item) => <UserItem key={item.id} name={item.name} id={item.id}/>)}
                 </ul>
             </>
         )
     }
 }
 
-export default UserList;
+const mapStateToProps = (state, props) => {
+    return {
+        users: state.users,
+    }
+}
+
+const mapActionToProps = {
+    onSubmit: addUser,
+}
+
+export default connect(mapStateToProps, mapActionToProps)(UserList);
