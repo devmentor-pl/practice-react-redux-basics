@@ -5,12 +5,19 @@ const Task03 = () => {
     const time = useSelector(({time = null}) => time);
     const dispatch = useDispatch();
 
+    const handleButton = () => {
+        dispatch( {type: 'getCurrentTime'} )
+    }
+
+    console.log(dispatch);
+
+
     return (
         <section>
             <h1>Task 3</h1>
             <div>
                 <time>{ time ? time.toLocaleTimeString() : '00:00:00' }</time>
-                <button onClick={ () => dispatch( {type: 'getCurrentTime'} )}>get current time</button>
+                <button onClick={handleButton}>get current time</button>
             </div>
         </section>
     );
