@@ -9,3 +9,12 @@ export const addUser = (user) => {
         }
     }
 }
+
+export const removeUser = (id) => {
+    return {
+        type: 'removeUser',
+        payload: { 
+            id: id,
+        }
+    }
+}

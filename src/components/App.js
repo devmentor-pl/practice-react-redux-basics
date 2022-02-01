@@ -31,26 +31,3 @@ const App = () => {
 }
 
 export default App;
-
-
-
-// const init = {
-//     message: 'Działa!',
-//     time: new Date(),
-//     users:[]
-// }
-
-// const state =  store.getState
-// const reducer = (state=init, action) =>{
-//     const {type} = action;
-//     console.log(type)
-//     switch (type) {
-//         case 'getCurrentTime':
-//            return  {...state, time: payload}
-//     }
-// }
-
-// const store = createStore(
-//     reducer, 
-//     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-// )
