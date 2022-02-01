@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 import UserItem from './UserItem';
-import {useDispatch, connect } from 'react-redux';
+import {connect } from 'react-redux';
 import {addUser} from './../actions/users';
 
 class UserList extends React.Component {
@@ -13,10 +13,11 @@ class UserList extends React.Component {
         })
     }
     
-    handleSubmit = e => {
+    handleSubmit = (e) => {
         e.preventDefault();
         const {inputValue} = this.state;
-        return this.props.onSubmit(inputValue)
+        this.props.onSubmit(inputValue);
+        this.userRef.value='';
     }
     
     render() {
@@ -24,7 +25,7 @@ class UserList extends React.Component {
             <>
                 <form onSubmit={this.handleSubmit}>
                     <div>
-                        <input onChange={this.getValue}/>
+                        <input ref={el => this.userRef=el} onChange={this.getValue}/>
                         <input type="submit" value="dodaj" />
                     </div>
                 </form>
