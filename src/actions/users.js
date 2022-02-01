@@ -18,3 +18,9 @@ export const removeUser = (id) => {
         }
     }
 }
+
+export const resetUsers = () => {
+    return {
+        type: 'resetUsers'
+    }
+}
