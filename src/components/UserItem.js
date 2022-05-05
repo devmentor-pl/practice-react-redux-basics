@@ -8,7 +8,6 @@ const UserItem = ({name = 'Default Name', id = -1}) => {
     const handleButton = e => {
         e.preventDefault();
         dispatch(removeUser(id));
-
     }
     return (
         <li>{name} <button onClick={handleButton}>usuń</button></li>
