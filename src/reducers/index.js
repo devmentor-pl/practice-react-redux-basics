@@ -21,6 +21,10 @@ const reducer = (state = initState,action) => {
             return {
                ... state, users:newList
             }
+        case 'deleteAllUsers':
+            return {
+                ...state, users: []
+            }
         default:
             return state
     }
