@@ -18,3 +18,9 @@ export const removeUser = (id) => {
         }
     }
 }
+
+export const deleteAllUsers = () => {
+    return {
+        type: 'deleteAllUsers',
+    }
+}
