@@ -9,17 +9,24 @@ import Task05 from './../../05/Task05';
 
 
 
-const initState = {message: 'Działa', time: new Date()}
+const initState = {message: 'Działa', time: new Date(), users:[]}
 
 const reducer = (state = initState, action) => {
     switch(action.type) {
         case 'getCurrentTime':
-
             return {
                ...state, time: new Date()
             };
+        case 'addUser':
+            return {
+                ...state, users: [...state.users, action.user]
+            };
+        case 'deleteUser':
+            return {
+                ...state, users: state.users.filter((user) =>user.id !== action.id)
+            };
         default: 
-            return state;
+        return state;
     }
 }
 
@@ -34,8 +41,8 @@ const App = () => {
         <Provider store={store}>
             <Task01 />
             <Task02  />
-            <Task03 />
-            {/* <Task04 /> */}
+            {/* <Task03 /> */}
+            <Task04 />
             {/* <Task05 /> */}
         </Provider>
         </>
