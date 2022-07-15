@@ -7,3 +7,7 @@ export const deleteUser = (id) => ({
     type: 'deleteUser',
     id
 })
+
+export const removeAllUsers = () => ({
+    type: 'removeAllUsers'
+})
