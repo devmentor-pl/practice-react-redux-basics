@@ -6,26 +6,40 @@ const Task01 = () => {
     const [tagName, setTagName] = useState('??');
     const [cursorPosition, setCursorPosition] = useState('[?,?]');
 
-    const setEventTime = ({timeStamp}) => {
-        setTime( parseInt(timeStamp / 1000) );
-    }
+    // const [event, setEvent] = useState(null)
 
-    const setEventTagName = ({target}) => {
+    const subject = new Subject()
+
+    const setEventTime = ({ timeStamp }) => {
+        setTime(parseInt(timeStamp / 1000));
+    }
+    subject.subscribe(setEventTime)
+
+    const setEventTagName = ({ target }) => {
         setTagName(target.tagName);
     }
+    subject.subscribe(setEventTagName)
 
-    const setEventCursorPosition = ({pageX, pageY}) => {
+    const setEventCursorPosition = ({ pageX, pageY }) => {
         setCursorPosition(`[${pageX},${pageY}]`);
     }
+    subject.subscribe(setEventCursorPosition)
+
+    // console.log(event)
+    console.log(subject.observersList)
+
 
     return (
         <section>
             <h1>Task 1</h1>
-            
-            <div onClick={ event => {
+
+            <div onClick={event => {
                 setEventTime(event);
                 setEventTagName(event);
                 setEventCursorPosition(event);
+
+                // setEvent(event)
+                subject.notify(event)
             }}>
                 <p>
                     <strong>Kliknij wybrany element:</strong> <a>link</a>, <button>button</button>, <span>span</span>
@@ -33,9 +47,9 @@ const Task01 = () => {
 
 
                 <ul>
-                    <li>time: { time }s</li>
-                    <li>tagName: { tagName }</li>
-                    <li>position: { cursorPosition }</li>
+                    <li>time: {time}s</li>
+                    <li>tagName: {tagName}</li>
+                    <li>position: {cursorPosition}</li>
                 </ul>
             </div>
         </section>
