@@ -1,8 +1,11 @@
 import React from 'react';
 import UserItem from './UserItem';
+import { connect } from 'react-redux';
 
 class UserList extends React.Component {
     render() {
+        const users = this.props.users
+        console.log( users )
         return (
             <>
                 <form>
@@ -13,11 +16,23 @@ class UserList extends React.Component {
                 </form>
 
                 <ul>
-                    <UserItem />
+                    {
+                        users.map(user => {
+                            const {id, name} = user
+                            return(
+                                <UserItem 
+                                    id={id} name={name}
+                                />                                
+                            )
+                        })
+                    }
+
                 </ul>
             </>
         )
     }
 }
-
-export default UserList;
+const mapStateToProps = state => ({
+    users: state.users
+})
+export default connect(mapStateToProps)(UserList)

@@ -3,6 +3,7 @@ import {createStore} from 'redux'
 const initialState = {
     message: 'Działa!',
     time: new Date(),
+    users: [{id: 1, name: 'Ala'}]
 }
 const reducer = (state = initialState, action) => {
     console.log( action )
