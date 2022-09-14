@@ -13,6 +13,17 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 time: new Date()
             } 
+            case 'ADD_USER':
+                    let id = -1
+                    state.users.forEach(user => {
+                        if(user.id >= id) {
+                            id = user.id + 1
+                        }
+                    })
+                return {
+                    ...state,
+                    users: [...state.users, {id: id, name: action.payload.name}]
+                }
         default:
             return state
     }
