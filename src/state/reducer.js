@@ -1,4 +1,4 @@
-import {GET_TIME, ADD_USER, DEL_USER} from './actions'
+import {GET_TIME, ADD_USER, DEL_USER, DEL_ALL} from './actions'
 
 // STATE
 const initialState = {
@@ -11,6 +11,7 @@ const initialState = {
 export const getTime = () => ({type: GET_TIME})
 export const addUser = name => ({type: ADD_USER, payload: {name: name}})
 export const deleteUser = id => ({type: DEL_USER, payload: {id}})
+export const deleteAll = () => ({type: DEL_ALL})
 
 // REDUCER
 const reducer = (state = initialState, action) => {
@@ -36,6 +37,11 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 users: state.users.filter(user => user.id !== action.payload.id)
+            }
+        case DEL_ALL: 
+            return {
+                ...state,
+                users: []
             }
         default:
             return state
