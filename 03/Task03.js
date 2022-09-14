@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {getTime} from '../src/store'
+import {getTime} from '../src/state/reducer'
 
 const Task03 = () => {
     const time = useSelector(({time = null}) => time);

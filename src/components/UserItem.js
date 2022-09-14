@@ -1,6 +1,6 @@
 import React from 'react';
 import {useDispatch} from 'react-redux'
-import {deleteUser} from '../store'
+import {deleteUser} from '../state/reducer'
 
 const UserItem = ({name = 'Default Name', id = -1}) => {
     const dispatch = useDispatch()
