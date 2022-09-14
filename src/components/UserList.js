@@ -13,17 +13,16 @@ class UserList extends React.Component {
     }
     onSubmit = e => {
         e.preventDefault()
-        console.log('onSubmit')
         const {addUser} = this.props
-        addUser(this.state.value)
-        this.setState({ value: '' });
+        const valueInput = this.state.value
+        if(valueInput) {
+            addUser(valueInput)
+            this.setState({ value: '' });
+        }
     }
     render() {
-        console.log( this.props )
         const users = this.props.users
-
         const {value} = this.state
-        console.log( users )
 
         return (
             <>
