@@ -12,30 +12,38 @@ const App = () => {
     const initialValue = {
         message: 'Działa!',
         time: new Date(),
+        users: [],
     }
 
-    const reducer = (state = initialValue, actions) => {
-        switch (actions.type) {
+    const reducer = (state = initialValue, action) => {
+        switch (action.type) {
             case 'getCurrentTime': {
-                return {...state,time: new Date()}
+                return { ...state, time: new Date() }
+            }
+            case 'addUser': {
+                return { ...state, users: [...state.users, action.user] }
+            }
+            case 'deleteUser': {
+                return { ...state, users: state.users.filter((user) => user.id !== action.id) }
             }
             default:
                 return state;
         }
     }
-    const store = createStore(reducer,window.__REDUX_DEVTOOLS_EXTENSION__
-    && window.__REDUX_DEVTOOLS_EXTENSION__());
+
+    const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__
+        && window.__REDUX_DEVTOOLS_EXTENSION__());
     return (
         <>
             <Provider store={store}>
                 <Task01 />
                 <Task02 />
                 <Task03 />
-                {/* <Task04 /> */}
+                <Task04 />
                 {/* <Task05 /> */}
             </Provider>
         </>
     )
-}
+};
 
 export default App;
