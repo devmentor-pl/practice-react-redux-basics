@@ -8,4 +8,8 @@ const deleteUser = (id) => ({
     id
 });
 
-export { addUser, deleteUser };
+const removeAllUsers = () => ({
+    type: 'removeAll',
+});
+
+export { addUser, deleteUser,removeAllUsers };
