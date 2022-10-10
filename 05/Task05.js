@@ -1,10 +1,22 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import {deleteUsersAll} from '../src/actions.js'
+
 
 const Task05 = () => {
+
+    const dispatch = useDispatch();
+
+    const handleDeleteAll = () => {
+     dispatch(deleteUsersAll());
+    }
+
+
+
     return (
         <section>
             <h1>Task 5</h1>
-            <button>remove all users</button>
+            <button onClick={handleDeleteAll}>remove all users</button>
         </section>
     );
 }
