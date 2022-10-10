@@ -8,9 +8,22 @@ import Task03 from "./../../03/Task03";
 import Task04 from "./../../04/Task04";
 import Task05 from "./../../05/Task05";
 
-const store = createStore(() => {
-  return { message: "Działa!" };
-});
+const initState = {message: 'Działa', time: new Date()}
+
+const reducer = (state = initState, action) => {
+    switch(action.type) {
+        case 'getCurrentTime':
+
+            return {
+               ...state, time: new Date()
+            };
+        default: 
+            return state;
+    }
+}
+
+const store = createStore(reducer,window.__REDUX_DEVTOOLS_EXTENSION__
+ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 const App = () => {
   return (
