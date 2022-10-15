@@ -6,13 +6,15 @@ const Task03 = () => {
     const dispatch = useDispatch();
 
     return (
-        <section>
-            <h1>Task 3</h1>
-            <div>
-                <time>{ time ? time.toLocaleTimeString() : '00:00:00' }</time>
-                <button onClick={ () => dispatch( {type: 'getCurrentTime'} )}>get current time</button>
-            </div>
-        </section>
+      <section>
+        <h1>Task 3</h1>
+        <div>
+          <time>{time ? time.toLocaleTimeString() : "00:00:00"}</time>
+          <button onClick={() => dispatch({ type: "GET_CURRENT_TIME" })}>
+            get current time
+          </button>
+        </div>
+      </section>
     );
 }
 
