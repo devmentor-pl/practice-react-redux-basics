@@ -25,6 +25,12 @@ const reducer = (state = initialValue, action) => {
                 users: state.users.filter((user) => user.id !== action.id)
             }
         }
+        case 'removeAll': {
+            return {
+                ...state,
+                users: []
+            }
+        }
         default: 
         return state
     }
