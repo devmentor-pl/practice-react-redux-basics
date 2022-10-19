@@ -6,16 +6,26 @@ import Task03 from './../../03/Task03';
 import Task04 from './../../04/Task04';
 import Task05 from './../../05/Task05';
 
+import {createStore} from 'redux'
+import { Provider } from 'react-redux';
+
+const store = createStore(() => {
+    return {
+        message: 'Działa!'
+    }
+})
+
+console.log(store.getState())
 
 const App = () => {
     return (
-        <>
+        <Provider store = {store}>
             <Task01 />
-            {/* <Task02 /> */}
+            <Task02 />
             {/* <Task03 /> */}
             {/* <Task04 /> */}
             {/* <Task05 /> */}
-        </>
+        </Provider>
     )
 }
 
