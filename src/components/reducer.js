@@ -1,6 +1,7 @@
 const initialValue = {
     message: 'Działa!',
-    time: new Date()
+    time: new Date(),
+    users: []
 }
 
 const reducer = (state = initialValue, action) => {
@@ -9,6 +10,19 @@ const reducer = (state = initialValue, action) => {
             return {
                 ...state,
                 time: new Date()
+            }
+        }
+        case 'addUser': {
+            return {
+                ...state,
+                users: [...state.users, action.user]
+            }
+        }
+
+        case 'removeUser': {
+            return {
+                ...state,
+                users: state.users.filter((user) => user.id !== action.id)
             }
         }
         default: 
