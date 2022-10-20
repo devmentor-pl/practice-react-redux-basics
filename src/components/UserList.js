@@ -1,13 +1,7 @@
 import React from 'react';
 import UserItem from './UserItem';
 import { connect } from 'react-redux'
-
-function addUser(data) {
-    return {
-        type: 'addUser',
-        payload: { data },
-    }
-}
+import { addUser } from './../actions';
 
 class UserList extends React.Component {
     state = {
