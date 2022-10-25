@@ -1,16 +1,7 @@
 import React from "react";
 import UserItem from "./UserItem";
 import { connect } from "react-redux";
-
-const addUser = ({ id, username }) => {
-  return {
-    type: "addUser",
-    payload: {
-      id: id,
-      username: username,
-    },
-  };
-};
+import { addUserAction } from "../actions/user";
 
 class UserList extends React.Component {
   state = {
@@ -19,7 +10,7 @@ class UserList extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    
+
     const idList = this.props.users.map((user) => user.id);
     const userData = {
       id: this.props.users.length === 0 ? 0 : Math.max(...idList) + 1,
@@ -41,7 +32,6 @@ class UserList extends React.Component {
             <input type="submit" value="dodaj" />
           </div>
         </form>
-
         <ul>
           {this.props.users.map(({ username, id }) => (
             <UserItem key={id} name={username} id={id} />
@@ -53,7 +43,7 @@ class UserList extends React.Component {
 }
 
 const mapDispatchToProps = {
-  addUser: addUser,
+  addUser: addUserAction,
 };
 
 const mapStateToProps = (state) => {
