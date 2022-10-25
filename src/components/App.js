@@ -10,26 +10,29 @@ import { createStore } from 'redux'
 
 const App = () => {
     const initialState = {
-        message: 'Działa!'
+        message: 'Działa!',
+        time: new Date()
     }
 
     const reducer = (state = initialState, action) => {
-        switch (action) {
+        switch (action.type) {
+          case 'getCurrentTime':
+            return {...state, time: new Date()}
           default:
             return state
         }
       }
       
-    const store = createStore(reducer,initialState)
+    const store = createStore(reducer,initialState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
     return (
         <>
-            <Task01 />
             <Provider store={store}>
+              <Task01 />
               <Task02 />
-            </Provider>
-            {/* <Task03 /> */}
+              <Task03 />
             {/* <Task04 /> */}
             {/* <Task05 /> */}
+            </Provider>
         </>
     )
 }
