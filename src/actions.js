@@ -15,3 +15,7 @@ export function removeUser(id) {
     payload: { id }
   }
 }
+
+export function clearUsers() {
+  return { type: 'clearUsers' }
+}
