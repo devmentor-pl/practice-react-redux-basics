@@ -8,6 +8,7 @@ import Task05 from "./../../05/Task05";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 import reducers from "./reducers";
+import { composeWithDevTools } from "redux-devtools-extension";
 
 const App = () => {
   const getCurrentTimeValue = () => {
@@ -16,7 +17,7 @@ const App = () => {
     };
   };
 
-  const store = createStore(reducers);
+  const store = createStore(reducers, composeWithDevTools());
 
   return (
     <>
