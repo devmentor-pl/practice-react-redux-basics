@@ -11,3 +11,9 @@ export const removeChosenUser = (id) => {
     payload: { id: id },
   };
 };
+
+export const removeEntireList = () => {
+  return {
+    type: "removeList",
+  };
+};

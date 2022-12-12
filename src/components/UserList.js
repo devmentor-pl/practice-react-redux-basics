@@ -1,6 +1,6 @@
 import React from 'react';
 import UserItem from './UserItem';
-import { addNewUser } from "./actions";
+import { addNewUser, removeEntireList } from "./actions/actions";
 import { connect } from "react-redux";
 
 class UserList extends React.Component {
@@ -8,6 +8,12 @@ class UserList extends React.Component {
     e.preventDefault();
     this.props.onAdd(e.target.children[0].children[0].value);
     e.target.children[0].children[0].value = "";
+  };
+
+  handleClick = (e) => {
+    e.preventDefault();
+    console.log("usuń listę");
+    this.props.onRemove();
   };
   render() {
     const { users } = this.props;
@@ -23,6 +29,7 @@ class UserList extends React.Component {
           </div>
         </form>
         <ul>{list}</ul>
+        <button onClick={this.handleClick}>usuń wszystko</button>
       </>
     );
   }
@@ -30,6 +37,13 @@ class UserList extends React.Component {
 
 const mapActionToProps = {
   onAdd: addNewUser,
+  onRemove: removeEntireList,
 };
 
-export default connect(null, mapActionToProps)(UserList);
+const mapStateToProps = (state, props) => {
+  return {
+    users: state.users,
+  };
+};
+
+export default connect(mapStateToProps, mapActionToProps)(UserList);
