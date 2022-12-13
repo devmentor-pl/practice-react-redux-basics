@@ -11,11 +11,11 @@ import reducers from "./reducers";
 import { composeWithDevTools } from "redux-devtools-extension";
 
 const App = () => {
-  const getCurrentTimeValue = () => {
+  /* const getCurrentTimeValue = () => {
     return {
       type: "getCurrentTime",
     };
-  };
+  };*/
 
   const store = createStore(reducers, composeWithDevTools());
 

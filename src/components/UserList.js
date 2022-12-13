@@ -4,10 +4,21 @@ import { addNewUser, removeEntireList } from "./actions/actions";
 import { connect } from "react-redux";
 
 class UserList extends React.Component {
+  state = {
+    inputName: "",
+  };
+
+  inputChange = (e) => {
+    this.setState({
+      inputName: e.target.value,
+    });
+  };
+
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.onAdd(e.target.children[0].children[0].value);
-    e.target.children[0].children[0].value = "";
+    let { inputName } = this.state;
+    this.props.onAdd(inputName);
+    this.setState({ inputName: "" });
   };
 
   handleClick = (e) => {
@@ -16,6 +27,7 @@ class UserList extends React.Component {
     this.props.onRemove();
   };
   render() {
+    const { inputName } = this.state;
     const { users } = this.props;
     const list = users.map((n) => {
       return <UserItem name={n.name} id={n.id} key={n.id} />;
@@ -24,7 +36,11 @@ class UserList extends React.Component {
       <>
         <form onSubmit={this.handleSubmit}>
           <div>
-            <input name="userName" />
+            <input
+              name="inputName"
+              value={inputName}
+              onChange={this.inputChange}
+            />
             <input type="submit" value="dodaj" />
           </div>
         </form>
