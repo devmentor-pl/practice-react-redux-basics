@@ -11,6 +11,7 @@ import { Provider } from 'react-redux';
 const initState = {
     message: 'Działa!',
     time: new Date(),
+    users: [],
 
 }
 const reducer = (state = initState, action) => {
@@ -18,24 +19,34 @@ const reducer = (state = initState, action) => {
         case 'getCurrentTime':
             const newTime = new Date();
             return {...state, time: newTime}
+        case 'addUser':
+            return {
+                ...state, 
+                users: [...state.users, action.payload]
+            }
+        case 'removeUser':
+            const newUsers = state.users.filter(user => user.id !== action.payload)
+            return{
+                ...state, users: newUsers
+            }
         default:
             return state
     }
-
 }
+
 const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__
     && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 const App = () => {
     return (
         <>
-            {/* <Task01 /> */}
             <Provider store={store}>
+                <Task01 />
                 <Task02/>
                 <Task03 />
-            </Provider>
-            {/* <Task04 /> */}
+                <Task04 />
             {/* <Task05 /> */}
+            </Provider>
         </>
     )
 }
