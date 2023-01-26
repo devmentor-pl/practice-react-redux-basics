@@ -8,15 +8,23 @@ import Task05 from './../../05/Task05';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-const initState = {message: 'Działa!'}
+const initState = {
+    message: 'Działa!',
+    time: new Date(),
+
+}
 const reducer = (state = initState, action) => {
     switch(action.type){
+        case 'getCurrentTime':
+            const newTime = new Date();
+            return {...state, time: newTime}
         default:
             return state
     }
 
 }
-const store = createStore(reducer)
+const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__
+    && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 const App = () => {
     return (
@@ -24,8 +32,8 @@ const App = () => {
             {/* <Task01 /> */}
             <Provider store={store}>
                 <Task02/>
+                <Task03 />
             </Provider>
-            {/* <Task03 /> */}
             {/* <Task04 /> */}
             {/* <Task05 /> */}
         </>
