@@ -1,7 +1,7 @@
 import React from 'react';
 import UserItem from './UserItem';
 import { connect } from 'react-redux';
-import { addUser } from '../actions/actions';
+import { addUser } from '../actions';
 
 class UserList extends React.Component {
     constructor(props){

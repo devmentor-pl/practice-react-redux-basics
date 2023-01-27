@@ -13,4 +13,10 @@ export const removeUser = (id) => {
             type: 'removeUser',
             payload: id,
         }
+}
+
+export const removeAllUsers = () => {
+    return {
+        type: 'removeAllUsers'
     }
+}
