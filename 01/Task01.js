@@ -43,4 +43,5 @@ const Task01 = () => {
 }
 
 export default Task01;
+export default Task01;
 
