@@ -8,4 +8,8 @@ const removeUserAction = (idToRemove) => ({
   idToRemove,
 });
 
-export { addUserAction, removeUserAction };
+const clearUsers = () => ({
+  type: "clearUsers",
+});
+
+export { addUserAction, removeUserAction, clearUsers };
