@@ -8,29 +8,13 @@ import Task03 from "./../../03/Task03";
 import Task04 from "./../../04/Task04";
 import Task05 from "./../../05/Task05";
 
-const initialState = {
-  message: "Działa!",
-  time: new Date(),
-};
+import reducers from "../reducers";
 
-const reducer = (state = initialState, action) => {
-  switch (action.type) {
-    case "getCurrentTime":
-      return {
-        ...state,
-        time: new Date(),
-      };
-
-    default:
-      return state;
-  }
-};
 
 const store = createStore(
-  reducer,
+  reducers,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
-
 
 const App = () => {
   return (
@@ -38,7 +22,7 @@ const App = () => {
       <Task01 />
       <Task02 />
       <Task03 />
-      {/* <Task04 /> */}
+      <Task04 />
       {/* <Task05 /> */}
     </Provider>
   );
