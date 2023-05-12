@@ -11,3 +11,7 @@ export const removeUserAction = (idToRemove) => {
 		idToRemove,
 	};
 };
+
+export const removeAllUsersAction = () => {
+	return { type: 'removeAll' };
+};

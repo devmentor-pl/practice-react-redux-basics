@@ -21,6 +21,11 @@ const reducer = (state = INITIAL_STATE, action) => {
 				...state,
 				users: state.users.filter((user) => user.id !== action.idToRemove),
 			};
+		case 'removeAll':
+			return {
+				...state,
+				users: [],
+			};
 		default:
 			return state;
 	}
