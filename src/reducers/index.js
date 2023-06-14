@@ -20,6 +20,12 @@ const reducers = (state = initialState, action) => {
 				users: state.users.filter((user) => user.id !== id),
 			};
 
+		case 'deleteAllUsers':
+			return {
+				...state,
+				users: [],
+			};
+
 		default:
 			return state;
 	}
