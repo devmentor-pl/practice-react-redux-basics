@@ -8,14 +8,25 @@ class UserList extends React.Component {
 		inputValue: '',
 	};
 
+	getLastUserId() {
+		const { users } = this.props;
+		let lastUserId = 0;
+
+		for (let i = 0; i < users.length; i++) {
+			if (users[i].id > lastUserId) {
+				lastUserId = users[i].id;
+			}
+		}
+		return lastUserId;
+	}
+
 	handleSubmit(e) {
 		e.preventDefault();
-		const { users } = this.props;
 		const { inputValue } = this.state;
 
 		const newUser = {
 			name: this.state.inputValue,
-			id: users.length + 1,
+			id: this.getLastUserId() + 1,
 		};
 
 		if (inputValue === '') {
