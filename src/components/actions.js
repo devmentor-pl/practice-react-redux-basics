@@ -1,4 +1,4 @@
-const addUer = (name, id) => ({
+const addUser = (name, id) => ({
     type: 'addUser',
     user: {name, id}
 })
@@ -12,4 +12,4 @@ const removeAll = () => ({
     type: 'removeAll'
 })
 
-export {addUer, removeUser, removeAll}
+export {addUser, removeUser, removeAll}
