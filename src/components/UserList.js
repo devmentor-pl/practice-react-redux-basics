@@ -1,6 +1,6 @@
 import React from 'react';
 import UserItem from './UserItem';
-import { addUser } from "../actions/users";
+import { addUser } from "../redux/actions";
 import { connect } from "react-redux";
 
 class UserList extends React.Component {

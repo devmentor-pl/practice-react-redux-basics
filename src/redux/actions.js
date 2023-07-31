@@ -15,3 +15,9 @@ export const removeUser = id => {
 		},
 	};
 };
+
+export const removeAllUsers = () => {
+	return {
+		type: "removeAllUsers",
+	};
+};

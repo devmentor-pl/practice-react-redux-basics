@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStore } from "redux";
+import { store } from "../redux/store";
 import { Provider } from "react-redux";
 
 import Task01 from "./../../01/Task01";
@@ -8,38 +8,6 @@ import Task03 from "./../../03/Task03";
 import Task04 from "./../../04/Task04";
 import Task05 from "./../../05/Task05";
 
-const initialState = {
-	message: "Działa!",
-	time: null,
-	users: [],
-};
-
-const reducer = (state = initialState, action) => {
-	switch (action.type) {
-		case "getCurrentTime":
-			return {
-				...state,
-				time: new Date(),
-			};
-		case "addUser":
-			const { user } = action.payload;
-			return {
-				...state,
-				users: [...state.users, user],
-			};
-		case "removeUser":
-			const { id } = action.payload;
-			return {
-				...state,
-				users: state.users.filter(item => item.id !== id),
-			};
-		default:
-			return state;
-	}
-};
-
-const store = createStore(reducer);
-
 const App = () => {
 	return (
 		<>
@@ -47,8 +15,8 @@ const App = () => {
 				{/* <Task01 /> */}
 				{/* <Task02 /> */}
 				{/* <Task03 /> */}
-				<Task04 />
-				{/* <Task05 /> */}
+				{/* <Task04 /> */}
+				<Task05 />
 			</Provider>
 		</>
 	);

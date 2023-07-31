@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from "react-redux";
-import { removeUser } from "../actions/users";
+import { removeUser } from "../redux/actions";
 
 const UserItem = ({ name = "Default Name", id = -1 }) => {
 	const dispatch = useDispatch();
