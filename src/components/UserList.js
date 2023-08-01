@@ -2,6 +2,7 @@ import React from 'react';
 import UserItem from './UserItem';
 import { addUser } from "../redux/actions";
 import { connect } from "react-redux";
+import { v4 as uuid } from "uuid";
 
 class UserList extends React.Component {
 	state = {
@@ -20,7 +21,7 @@ class UserList extends React.Component {
 
 		const newUser = {
 			name: inputValue,
-			id: users.length + 1,
+			id: uuid(),
 		};
 
 		this.props.addUser(newUser);
