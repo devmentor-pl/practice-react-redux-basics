@@ -17,8 +17,6 @@ const Task01 = () => {
     const setEventCursorPosition = ({pageX, pageY}) => {
         setCursorPosition(`[${pageX},${pageY}]`);
     }
-
-    
     return (
         <section>
             <h1>Task 1</h1>
