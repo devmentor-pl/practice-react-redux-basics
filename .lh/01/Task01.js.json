@@ -1,0 +1,62 @@
+{
+    "sourceFile": "01/Task01.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 11,
+            "patches": [
+                {
+                    "date": 1695292583428,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1695292858665,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,10 @@\n     const setEventCursorPosition = ({ pageX, pageY }) => {\n         setCursorPosition(`[${pageX},${pageY}]`);\n     };\n \n+    \n+\n     return (\n         <section>\n             <h1>Task 1</h1>\n \n"
+                },
+                {
+                    "date": 1695292868519,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     const setEventCursorPosition = ({ pageX, pageY }) => {\n         setCursorPosition(`[${pageX},${pageY}]`);\n     };\n \n-    \n+    subject.subscribe()\n \n     return (\n         <section>\n             <h1>Task 1</h1>\n"
+                },
+                {
+                    "date": 1695292877140,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     const setEventCursorPosition = ({ pageX, pageY }) => {\n         setCursorPosition(`[${pageX},${pageY}]`);\n     };\n \n-    subject.subscribe()\n+    subject.subscribe(setEventTime)\n \n     return (\n         <section>\n             <h1>Task 1</h1>\n"
+                },
+                {
+                    "date": 1695292882269,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,11 @@\n     const setEventCursorPosition = ({ pageX, pageY }) => {\n         setCursorPosition(`[${pageX},${pageY}]`);\n     };\n \n-    subject.subscribe(setEventTime)\n+    subject.subscribe(setEventTime);\n+    subject.subscribe(setEventTime);\n+    subject.subscribe(setEventTime);\n \n     return (\n         <section>\n             <h1>Task 1</h1>\n"
+                },
+                {
+                    "date": 1695292890349,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,51 @@\n+import React, { useState } from 'react';\n+import Subject from './../src/libs/Subject';\n+\n+const Task01 = () => {\n+    const [time, setTime] = useState(0);\n+    const [tagName, setTagName] = useState('??');\n+    const [cursorPosition, setCursorPosition] = useState('[?,?]');\n+    const subject = new Subject();\n+\n+    const setEventTime = ({ timeStamp }) => {\n+        setTime(parseInt(timeStamp / 1000));\n+    };\n+\n+    const setEventTagName = ({ target }) => {\n+        setTagName(target.tagName);\n+    };\n+\n+    const setEventCursorPosition = ({ pageX, pageY }) => {\n+        setCursorPosition(`[${pageX},${pageY}]`);\n+    };\n+\n+    subject.subscribe(setEventTime);\n+    subject.subscribe(setEventTagName);\n+    subject.subscribe(set);\n+\n+    return (\n+        <section>\n+            <h1>Task 1</h1>\n+\n+            <div\n+                onClick={event => {\n+                    setEventTime(event);\n+                    setEventTagName(event);\n+                    setEventCursorPosition(event);\n+                }}\n+            >\n+                <p>\n+                    <strong>Kliknij wybrany element:</strong> <a>link</a>, <button>button</button>, <span>span</span>\n+                </p>\n+\n+                <ul>\n+                    <li>time: {time}s</li>\n+                    <li>tagName: {tagName}</li>\n+                    <li>position: {cursorPosition}</li>\n+                </ul>\n+            </div>\n+        </section>\n+    );\n+};\n+\n+export default Task01;\n"
+                },
+                {
+                    "date": 1695292910238,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n     const [time, setTime] = useState(0);\n     const [tagName, setTagName] = useState('??');\n     const [cursorPosition, setCursorPosition] = useState('[?,?]');\n     const subject = new Subject();\n+    console.log(sub)\n \n     const setEventTime = ({ timeStamp }) => {\n         setTime(parseInt(timeStamp / 1000));\n     };\n@@ -20,9 +21,9 @@\n     };\n \n     subject.subscribe(setEventTime);\n     subject.subscribe(setEventTagName);\n-    subject.subscribe(set);\n+    subject.subscribe(setEventCursorPosition);\n \n     return (\n         <section>\n             <h1>Task 1</h1>\n@@ -48,55 +49,4 @@\n     );\n };\n \n export default Task01;\n-import React, { useState } from 'react';\n-import Subject from './../src/libs/Subject';\n-\n-const Task01 = () => {\n-    const [time, setTime] = useState(0);\n-    const [tagName, setTagName] = useState('??');\n-    const [cursorPosition, setCursorPosition] = useState('[?,?]');\n-    const subject = new Subject();\n-\n-    const setEventTime = ({ timeStamp }) => {\n-        setTime(parseInt(timeStamp / 1000));\n-    };\n-\n-    const setEventTagName = ({ target }) => {\n-        setTagName(target.tagName);\n-    };\n-\n-    const setEventCursorPosition = ({ pageX, pageY }) => {\n-        setCursorPosition(`[${pageX},${pageY}]`);\n-    };\n-\n-    subject.subscribe(setEventTime);\n-    subject.subscribe(setEventTime);\n-    subject.subscribe(setEventTime);\n-\n-    return (\n-        <section>\n-            <h1>Task 1</h1>\n-\n-            <div\n-                onClick={event => {\n-                    setEventTime(event);\n-                    setEventTagName(event);\n-                    setEventCursorPosition(event);\n-                }}\n-            >\n-                <p>\n-                    <strong>Kliknij wybrany element:</strong> <a>link</a>, <button>button</button>, <span>span</span>\n-                </p>\n-\n-                <ul>\n-                    <li>time: {time}s</li>\n-                    <li>tagName: {tagName}</li>\n-                    <li>position: {cursorPosition}</li>\n-                </ul>\n-            </div>\n-        </section>\n-    );\n-};\n-\n-export default Task01;\n"
+                },
+                {
+                    "date": 1695292916950,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,8 @@\n     const [time, setTime] = useState(0);\n     const [tagName, setTagName] = useState('??');\n     const [cursorPosition, setCursorPosition] = useState('[?,?]');\n     const subject = new Subject();\n-    console.log(sub)\n \n     const setEventTime = ({ timeStamp }) => {\n         setTime(parseInt(timeStamp / 1000));\n     };\n@@ -22,8 +21,9 @@\n \n     subject.subscribe(setEventTime);\n     subject.subscribe(setEventTagName);\n     subject.subscribe(setEventCursorPosition);\n+    console.log(subject);\n \n     return (\n         <section>\n             <h1>Task 1</h1>\n"
+                },
+                {
+                    "date": 1695292922275,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,8 @@\n \n     subject.subscribe(setEventTime);\n     subject.subscribe(setEventTagName);\n     subject.subscribe(setEventCursorPosition);\n-    console.log(subject);\n \n     return (\n         <section>\n             <h1>Task 1</h1>\n"
+                },
+                {
+                    "date": 1695292939083,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,11 +28,12 @@\n             <h1>Task 1</h1>\n \n             <div\n                 onClick={event => {\n-                    setEventTime(event);\n-                    setEventTagName(event);\n-                    setEventCursorPosition(event);\n+                    // setEventTime(event);\n+                    // setEventTagName(event);\n+                    // setEventCursorPosition(event);\n+                    subject.notify(event);\n                 }}\n             >\n                 <p>\n                     <strong>Kliknij wybrany element:</strong> <a>link</a>, <button>button</button>, <span>span</span>\n"
+                },
+                {
+                    "date": 1695292951507,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n                 onClick={event => {\n                     // setEventTime(event);\n                     // setEventTagName(event);\n                     // setEventCursorPosition(event);\n-                    subject.notify(event);\n+                    // subject.notify(event);\n                 }}\n             >\n                 <p>\n                     <strong>Kliknij wybrany element:</strong> <a>link</a>, <button>button</button>, <span>span</span>\n"
+                },
+                {
+                    "date": 1695292970689,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n                 onClick={event => {\n                     // setEventTime(event);\n                     // setEventTagName(event);\n                     // setEventCursorPosition(event);\n-                    // subject.notify(event);\n+                    subject.notify(event);\n                 }}\n             >\n                 <p>\n                     <strong>Kliknij wybrany element:</strong> <a>link</a>, <button>button</button>, <span>span</span>\n"
+                }
+            ],
+            "date": 1695292583428,
+            "name": "Commit-0",
+            "content": "import React, { useState } from 'react';\nimport Subject from './../src/libs/Subject';\n\nconst Task01 = () => {\n    const [time, setTime] = useState(0);\n    const [tagName, setTagName] = useState('??');\n    const [cursorPosition, setCursorPosition] = useState('[?,?]');\n    const subject = new Subject();\n\n    const setEventTime = ({ timeStamp }) => {\n        setTime(parseInt(timeStamp / 1000));\n    };\n\n    const setEventTagName = ({ target }) => {\n        setTagName(target.tagName);\n    };\n\n    const setEventCursorPosition = ({ pageX, pageY }) => {\n        setCursorPosition(`[${pageX},${pageY}]`);\n    };\n\n    return (\n        <section>\n            <h1>Task 1</h1>\n\n            <div\n                onClick={event => {\n                    setEventTime(event);\n                    setEventTagName(event);\n                    setEventCursorPosition(event);\n                }}\n            >\n                <p>\n                    <strong>Kliknij wybrany element:</strong> <a>link</a>, <button>button</button>, <span>span</span>\n                </p>\n\n                <ul>\n                    <li>time: {time}s</li>\n                    <li>tagName: {tagName}</li>\n                    <li>position: {cursorPosition}</li>\n                </ul>\n            </div>\n        </section>\n    );\n};\n\nexport default Task01;\n"
+        }
+    ]
+}
