@@ -1,0 +1,54 @@
+{
+    "sourceFile": "src/app.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1695293847024,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1695293863687,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n // ./src/app.js\n import React from 'react';\n import { createRoot } from 'react-dom/client';\n \n+import {store}\n \n import App from './components/App';\n \n const root = createRoot(document.querySelector('#root'));\n"
+                },
+                {
+                    "date": 1695293879824,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n // ./src/app.js\n import React from 'react';\n import { createRoot } from 'react-dom/client';\n \n-import {store}\n+import { Store } from 'redux';\n \n import App from './components/App';\n \n const root = createRoot(document.querySelector('#root'));\n"
+                },
+                {
+                    "date": 1695293886025,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n // ./src/app.js\n import React from 'react';\n import { createRoot } from 'react-dom/client';\n \n-import { Store } from 'redux';\n+import {store} from './'\n \n import App from './components/App';\n \n const root = createRoot(document.querySelector('#root'));\n"
+                },
+                {
+                    "date": 1695293900872,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n // ./src/app.js\n import React from 'react';\n-import { createRoot } from 'react-dom/client';\n+import { createRoot } from 'react-dom/client'\n+;\n \n-import {store} from './'\n+import { store } from './store';\n \n import App from './components/App';\n \n const root = createRoot(document.querySelector('#root'));\n"
+                },
+                {
+                    "date": 1695293909492,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n // ./src/app.js\n import React from 'react';\n-import { createRoot } from 'react-dom/client'\n-;\n+import { createRoot } from 'react-dom/client';\n+import { Provider } from 'react-redux';\n \n import { store } from './store';\n \n import App from './components/App';\n"
+                },
+                {
+                    "date": 1695293915702,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,5 +7,5 @@\n \n import App from './components/App';\n \n const root = createRoot(document.querySelector('#root'));\n-root.render(<App />);\n+root.render(<Provider></Provider><App />);\n"
+                },
+                {
+                    "date": 1695293922560,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,5 +7,9 @@\n \n import App from './components/App';\n \n const root = createRoot(document.querySelector('#root'));\n-root.render(<Provider></Provider><App />);\n+root.render(\n+    <Provider>\n+        <App />\n+    </Provider>,\n+);\n"
+                },
+                {
+                    "date": 1695294657880,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n // ./src/app.js\n import React from 'react';\n import { createRoot } from 'react-dom/client';\n-import { Provider } from 'react-redux';\n \n+\n import { store } from './store';\n \n import App from './components/App';\n \n"
+                },
+                {
+                    "date": 1695294669306,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,12 @@\n // ./src/app.js\n import React from 'react';\n import { createRoot } from 'react-dom/client';\n \n-\n-import { store } from './store';\n-\n import App from './components/App';\n \n const root = createRoot(document.querySelector('#root'));\n root.render(\n-    <Provider>\n+    <Provider store={store}>\n         <App />\n     </Provider>,\n );\n"
+                }
+            ],
+            "date": 1695293847024,
+            "name": "Commit-0",
+            "content": "// ./src/app.js\nimport React from 'react';\nimport { createRoot } from 'react-dom/client';\n\n\nimport App from './components/App';\n\nconst root = createRoot(document.querySelector('#root'));\nroot.render(<App />);\n"
+        }
+    ]
+}
