@@ -1,0 +1,74 @@
+{
+    "sourceFile": "src/components/UserItem.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 14,
+            "patches": [
+                {
+                    "date": 1695296804455,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1695326396240,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,9 @@\n+import React from 'react';\n+\n+const UserItem = ({name = 'Default Name', id = -1}) => {\n+    return (\n+        <li>{name} <button onClick={handleClick}>usuń</button></li>\n+    )\n+}\n+\n+export default UserItem;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1695326404166,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,18 +1,12 @@\n import React from 'react';\n \n const UserItem = ({name = 'Default Name', id = -1}) => {\n-    return (\n-        <li>{name} <button onClick={handleClick}>usuń</button></li>\n-    )\n-}\n \n-export default UserItem;\n-import React from 'react';\n+    const handleClick = () => {}\n \n-const UserItem = ({name = 'Default Name', id = -1}) => {\n     return (\n-        <li>{name} <button>usuń</button></li>\n+        <li>{name} <button onClick={handleClick}>usuń</button></li>\n     )\n }\n\\ No newline at end of file\n \n-export default UserItem; \n+export default UserItem;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1695326411644,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n     const handleClick = () => {}\n \n     return (\n-        <li>{name} <button onClick={handleClick}>usuń</button></li>\n+        <li>{name} <button onClick={() => handleClick}>usuń</button></li>\n     )\n }\n \n export default UserItem;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1695326419671,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n import React from 'react';\n \n const UserItem = ({name = 'Default Name', id = -1}) => {\n \n-    const handleClick = () => {}\n+    const handleClick = (id) => {}\n \n     return (\n-        <li>{name} <button onClick={() => handleClick}>usuń</button></li>\n+        <li>{name} <button onClick={() => handleClick(id)}>usuń</button></li>\n     )\n }\n \n export default UserItem;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1695326492664,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,13 @@\n import React from 'react';\n+import { UseSelector } from 'react-redux/es/hooks/useSelector';\n \n const UserItem = ({name = 'Default Name', id = -1}) => {\n \n-    const handleClick = (id) => {}\n+    const handleClick = (id) => {\n \n+    }\n+\n     return (\n         <li>{name} <button onClick={() => handleClick(id)}>usuń</button></li>\n     )\n }\n"
+                },
+                {
+                    "date": 1695326500527,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React from 'react';\n-import { UseSelector } from 'react-redux/es/hooks/useSelector';\n+import {useSelector} from ''\n \n const UserItem = ({name = 'Default Name', id = -1}) => {\n \n     const handleClick = (id) => {\n"
+                },
+                {
+                    "date": 1695326509243,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,15 @@\n import React from 'react';\n-import {useSelector} from ''\n+import { useSelector } from 'react-redux';\n \n-const UserItem = ({name = 'Default Name', id = -1}) => {\n+const UserItem = ({ name = 'Default Name', id = -1 }) => {\n+    \n+    const handleClick = id => {};\n \n-    const handleClick = (id) => {\n-\n-    }\n-\n     return (\n-        <li>{name} <button onClick={() => handleClick(id)}>usuń</button></li>\n\\ No newline at end of file\n-    )\n-}\n+        <li>\n+            {name} <button onClick={() => handleClick(id)}>usuń</button>\n+        </li>\n+    );\n+};\n \n-export default UserItem;\n+export default UserItem;\n"
+                },
+                {
+                    "date": 1695326515137,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\n import { useSelector } from 'react-redux';\n \n const UserItem = ({ name = 'Default Name', id = -1 }) => {\n-    \n+    const users = \n     const handleClick = id => {};\n \n     return (\n         <li>\n"
+                },
+                {
+                    "date": 1695326524666,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\n import { useSelector } from 'react-redux';\n \n const UserItem = ({ name = 'Default Name', id = -1 }) => {\n-    const users = \n+    const users = useSelector(state => state.users);\n     const handleClick = id => {};\n \n     return (\n         <li>\n"
+                },
+                {
+                    "date": 1695326529874,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,17 @@\n+import React from 'react';\n+import { useSelector } from 'react-redux';\n+\n+const UserItem = ({ name = 'Default Name', id = -1 }) => {\n+    const users = useSelector(state => state.users);\n+    const handleClick = id => {\n+        console.log(users);\n+    };\n+\n+    return (\n+        <li>\n+            {name} <button onClick={() => handleClick(id)}>usuń</button>\n+        </li>\n+    );\n+};\n+\n+export default UserItem;\n"
+                },
+                {
+                    "date": 1695326559203,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n const UserItem = ({ name = 'Default Name', id = -1 }) => {\n     const users = useSelector(state => state.users);\n     const handleClick = id => {\n-        console.log(users);\n+        const newUsers = \n     };\n \n     return (\n         <li>\n@@ -14,19 +14,4 @@\n     );\n };\n \n export default UserItem;\n-import React from 'react';\n-import { useSelector } from 'react-redux';\n-\n-const UserItem = ({ name = 'Default Name', id = -1 }) => {\n-    const users = useSelector(state => state.users);\n-    const handleClick = id => {};\n-\n-    return (\n-        <li>\n-            {name} <button onClick={() => handleClick(id)}>usuń</button>\n-        </li>\n-    );\n-};\n-\n-export default UserItem;\n"
+                },
+                {
+                    "date": 1695326565411,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n const UserItem = ({ name = 'Default Name', id = -1 }) => {\n     const users = useSelector(state => state.users);\n     const handleClick = id => {\n-        const newUsers = \n+        const newUsers = users.items.filter((item) => );\n     };\n \n     return (\n         <li>\n"
+                },
+                {
+                    "date": 1695326572728,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n const UserItem = ({ name = 'Default Name', id = -1 }) => {\n     const users = useSelector(state => state.users);\n     const handleClick = id => {\n-        const newUsers = users.filter((item) => );\n+        const newUsers = users.filter((user) => );\n     };\n \n     return (\n         <li>\n"
+                },
+                {
+                    "date": 1695326579244,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,18 @@\n+import React from 'react';\n+import { useSelector } from 'react-redux';\n+\n+const UserItem = ({ name = 'Default Name', id = -1 }) => {\n+    const users = useSelector(state => state.users);\n+    const handleClick = id => {\n+        const newUsers = users.filter(user => user.id !== id);\n+        \n+    };\n+\n+    return (\n+        <li>\n+            {name} <button onClick={() => handleClick(id)}>usuń</button>\n+        </li>\n+    );\n+};\n+\n+export default UserItem;\n"
+                }
+            ],
+            "date": 1695296804455,
+            "name": "Commit-0",
+            "content": "import React from 'react';\n\nconst UserItem = ({name = 'Default Name', id = -1}) => {\n    return (\n        <li>{name} <button>usuń</button></li>\n    )\n}\n\nexport default UserItem; "
+        }
+    ]
+}

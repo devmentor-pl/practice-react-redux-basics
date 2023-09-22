@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/time/index.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1695298192104,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1695298200271,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,2 @@\n-import timeReducer from \"./reducers\";\n\\ No newline at end of file\n+import timeReducer from './reducers';\n+export default timeReducer;\n"
+                }
+            ],
+            "date": 1695298192104,
+            "name": "Commit-0",
+            "content": "import "
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/reducers.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1695298355454,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1695298360547,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,2 @@\n-import {combine}\n\\ No newline at end of file\n+import { combineReducers } from \"redux\";\n+\n"
+                },
+                {
+                    "date": 1695298372097,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n import { combineReducers } from \"redux\";\n \n-import ti\n\\ No newline at end of file\n+import timeReducer from \"./time/duck\";\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1695298380901,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,4 @@\n+import { combineReducers } from \"redux\";\n+\n+import timeReducer from \"./time/duck\";\n+import usersRe\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1695298355454,
+            "name": "Commit-0",
+            "content": "import {combine}"
+        }
+    ]
+}
