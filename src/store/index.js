@@ -11,6 +11,8 @@ const reducer = (state = initState, action) => {
             const { payload: id } = action;
             const newUsers = state.users.filter(user => user.id !== id);
             return { ...state, users: newUsers };
+        case 'resetUsersList':
+            return { ...state, users: [] };
         default:
             return state;
     }
