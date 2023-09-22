@@ -1,11 +1,9 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { removeUserAction } from '../actions/user';
+import userActions from '../duck/actions';
 
 const UserItem = ({ name = 'Default Name', id = -1 }) => {
-    const dispatch = useDispatch();
     const handleClick = id => {
-        dispatch(removeUserAction(id));
+        userActions.remove(id);
     };
 
     return (

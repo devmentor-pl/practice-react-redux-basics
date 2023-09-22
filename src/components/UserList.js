@@ -2,7 +2,7 @@ import React from 'react';
 import UserItem from './UserItem';
 import { connect } from 'react-redux';
 
-import { addUserAction } from '../actions/user';
+import userActions from '../duck/actions';
 
 class UserList extends React.Component {
     state = {
@@ -11,8 +11,7 @@ class UserList extends React.Component {
 
     handleSubmit = e => {
         e.preventDefault();
-
-        this.props.addUser(this.state.userInput);
+        userActions.add(this.state.userInput);
         this.setState({ userInput: '' });
     };
 
@@ -33,7 +32,7 @@ class UserList extends React.Component {
                 </form>
 
                 <ul>
-                    <UserItem />
+                    {/* <UserItem /> */}
                     {this.props.users.map(({ id, name }) => (
                         <UserItem key={id} id={id} name={name} />
                     ))}
@@ -43,9 +42,9 @@ class UserList extends React.Component {
     }
 }
 
-const mapActionToProps = {
-    addUser: addUserAction,
-};
+// const mapActionToProps = {
+//     addUser: userActions.add,
+// };
 
 const mapStateToProps = (state, props) => {
     return {
@@ -53,4 +52,4 @@ const mapStateToProps = (state, props) => {
     };
 };
 
-export default connect(mapStateToProps, mapActionToProps)(UserList);
+export default connect(mapStateToProps, null)(UserList);

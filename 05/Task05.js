@@ -1,13 +1,10 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
 
-import { resetUsersListAction } from '../src/actions/user';
+import userActions from '../src/duck/actions';
 
 const Task05 = () => {
-    const dispatch = useDispatch();
-
     const handleClick = () => {
-        dispatch(resetUsersListAction());
+        userActions.resetList();
     };
 
     return (
