@@ -10,22 +10,34 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
 const App = () => {
-    const initMessage = { message: "Działa!" }
+
+    const initMessage = { message: "Działa!", time: new Date() }
     const reducer = (state = initMessage, action) => {
-        return state
+        switch (action.type) {
+            case 'getCurrentTime':
+                return {
+                    ...state,
+                    time: new Date()
+                }
+            default:
+                return state
+        }
     }
-    const store = createStore(reducer)
+    const store = createStore(reducer,
+        window.__REDUX_DEVTOOLS_EXTENSION__
+        && window.__REDUX_DEVTOOLS_EXTENSION__()
+    )
 
     return (
-        <>
+
+        <Provider store={store}>
             <Task01 />
-            <Provider store={store}>
-                <Task02 />
-            </Provider>
-            {/* <Task03 /> */}
+            <Task02 />
+            <Task03 />
             {/* <Task04 /> */}
             {/* <Task05 /> */}
-        </>
+        </Provider>
+
     )
 }
 
