@@ -11,13 +11,34 @@ import { Provider } from 'react-redux';
 
 const App = () => {
 
-    const initMessage = { message: "Działa!", time: new Date() }
+    const initMessage = { message: "Działa!", time: new Date(), users: [{ id: 0, name: 'Anna' }] }
     const reducer = (state = initMessage, action) => {
         switch (action.type) {
             case 'getCurrentTime':
                 return {
                     ...state,
                     time: new Date()
+                }
+            case 'addUser':
+                const { users } = state
+                let id
+                const usersLength = users.length
+
+                if (usersLength !== 0) {
+                    id = users[usersLength - 1].id
+                } else { id = 0 }
+                
+                return {
+                    ...state,
+                    users: [...users, { id: id + 1, name: action.payload.name }]
+                }
+
+            case 'removeUser':
+                const newUsersList = state.users.filter(user => user.id !== action.payload.id)
+
+                return {
+                    ...state,
+                    users: newUsersList
                 }
             default:
                 return state
@@ -34,7 +55,7 @@ const App = () => {
             <Task01 />
             <Task02 />
             <Task03 />
-            {/* <Task04 /> */}
+            <Task04 />
             {/* <Task05 /> */}
         </Provider>
 
