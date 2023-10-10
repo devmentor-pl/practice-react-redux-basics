@@ -1,14 +1,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { removeUser } from '../actions/actions';
 
-function removeUser(id) {
-	return {
-		type: 'removeUser',
-		payload: {
-			id,
-		},
-	};
-}
+
 
 const UserItem = ({ name = 'Default Name', id = -1 }) => {
 	const dispatch = useDispatch();

@@ -9,17 +9,17 @@ const Task01 = () => {
 	const [tagName, setTagName] = useState('??');
 	const [cursorPosition, setCursorPosition] = useState('[?,?]');
 
-	const setEventTime = ({ timeStamp }) => {
-		setTime(parseInt(timeStamp / 1000));
-	};
+	// const setEventTime = ({ timeStamp }) => {
+	// 	setTime(parseInt(timeStamp / 1000));
+	// };
 
-	const setEventTagName = ({ target }) => {
-		setTagName(target.tagName);
-	};
+	// const setEventTagName = ({ target }) => {
+	// 	setTagName(target.tagName);
+	// };
 
-	const setEventCursorPosition = ({ pageX, pageY }) => {
-		setCursorPosition(`[${pageX},${pageY}]`);
-	};
+	// const setEventCursorPosition = ({ pageX, pageY }) => {
+	// 	setCursorPosition(`[${pageX},${pageY}]`);
+	// };
 
 	const handleEvent = ({ timeStamp, target, pageX, pageY }) => {
 		setTime(parseInt(timeStamp / 1000));
