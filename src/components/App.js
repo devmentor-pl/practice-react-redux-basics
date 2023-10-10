@@ -9,11 +9,21 @@ import Task04 from './../../04/Task04';
 import Task05 from './../../05/Task05';
 
 
-const initialState = { message: 'Działa!', time: new Date() };
+const initialState = { message: 'Działa!', time: new Date(), users: [] };
 const reducer = (state = initialState, action) => {
 	switch (action.type) {
 		case 'getCurrentTime':
 			return { ...state, time: new Date() };
+		case 'addUser':
+			const { data } = action.payload;
+			return { ...state, users: [...state.users, data] };
+		case 'removeUser': {
+			const { id } = action.payload;
+			return {
+				...state,
+				users: state.users.filter((user) => user.id !== id),
+			};
+		}
 	}
 	return state;
 };
@@ -27,7 +37,7 @@ const App = () => {
 			<Task01 />
 			<Task02 />
 			<Task03 />
-			{/* <Task04 /> */}
+			<Task04 />
 			{/* <Task05 /> */}
 		</Provider>
 	);
