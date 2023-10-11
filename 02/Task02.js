@@ -8,6 +8,7 @@ const Task02 = () => {
     }
 
     const message = useSelector(getMessage);
+    // const message = useSelector(state => state.message); // only test
 
     return (
         <section>
