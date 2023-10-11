@@ -1,3 +1,5 @@
+import { v4 as uuid } from 'uuid';
+
 const initMessage = { message: "Działa!", time: new Date(), users: [] }
 
 const reducer = (state = initMessage, action) => {
@@ -9,16 +11,16 @@ const reducer = (state = initMessage, action) => {
             }
         case 'addUser':
             const { users } = state
-            let id
-            const usersLength = users.length
+            // let id
+            // const usersLength = users.length
 
-            if (usersLength !== 0) {
-                id = users[usersLength - 1].id + 1
-            } else { id = 0 }
+            // if (usersLength !== 0) {
+            //     id = users[usersLength - 1].id + 1
+            // } else { id = 0 }
 
             return {
                 ...state,
-                users: [...users, { id: id, name: action.payload.name }]
+                users: [...users, { id: uuid(), name: action.payload.name }]
             }
 
         case 'removeUser':
