@@ -6,40 +6,53 @@ const Task01 = () => {
     const [tagName, setTagName] = useState('??');
     const [cursorPosition, setCursorPosition] = useState('[?,?]');
 
-    const setEventTime = ({timeStamp}) => {
-        setTime( parseInt(timeStamp / 1000) );
-    }
+    const setEventTime = ({ timeStamp }) => {
+			setTime(parseInt(timeStamp / 1000));
+		};
 
-    const setEventTagName = ({target}) => {
-        setTagName(target.tagName);
-    }
+		const setEventTagName = ({ target }) => {
+			setTagName(target.tagName);
+		};
 
-    const setEventCursorPosition = ({pageX, pageY}) => {
-        setCursorPosition(`[${pageX},${pageY}]`);
-    }
+		const setEventCursorPosition = ({ pageX, pageY }) => {
+			setCursorPosition(`[${pageX},${pageY}]`);
+		};
 
-    return (
-        <section>
-            <h1>Task 1</h1>
-            
-            <div onClick={ event => {
-                setEventTime(event);
-                setEventTagName(event);
-                setEventCursorPosition(event);
-            }}>
-                <p>
-                    <strong>Kliknij wybrany element:</strong> <a>link</a>, <button>button</button>, <span>span</span>
-                </p>
+		const subject = new Subject();
 
+		const subscriber1 = data => console.log(`sub1 -> ${data}`);
+		subject.subscribe(subscriber1);
 
-                <ul>
-                    <li>time: { time }s</li>
-                    <li>tagName: { tagName }</li>
-                    <li>position: { cursorPosition }</li>
-                </ul>
-            </div>
-        </section>
-    )
+		const subscriber2 = data => console.log(`sub2 -> ${data}`);
+		subject.subscribe(subscriber2);
+
+		const notifySubscribers = () => {
+			subject.notify(`time: ${time}s, tagName: ${tagName}, position: ${cursorPosition}`);
+		};
+		return (
+			<section>
+				<h1>Task 1</h1>
+
+				<div
+					onClick={event => {
+						setEventTime(event);
+						setEventTagName(event);
+						setEventCursorPosition(event);
+						notifySubscribers();
+					}}
+				>
+					<p>
+						<strong>Kliknij wybrany element:</strong> <a>link</a>, <button>button</button>, <span>span</span>
+					</p>
+
+					<ul>
+						<li>time: {time}s</li>
+						<li>tagName: {tagName}</li>
+						<li>position: {cursorPosition}</li>
+					</ul>
+				</div>
+			</section>
+		);
 }
 
 export default Task01;
