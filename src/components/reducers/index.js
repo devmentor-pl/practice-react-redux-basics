@@ -1,10 +1,5 @@
-const initialState = {
-	message: 'działa',
-	time: new Date(),
-	users: [],
-};
-
-const rootReducer = (state = initialState, action) => {
+import storage from "../storage/storage";
+const rootReducer = (state = storage, action) => {
 	switch (action.type) {
 		case 'getCurrentTime':
 			return { ...state, time: new Date() };
