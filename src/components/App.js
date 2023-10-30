@@ -10,13 +10,13 @@ import Task04 from './../../04/Task04';
 import Task05 from './../../05/Task05';
 
 const App = () => {
-	const store = createStore(rootReducer);
+	const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 	return (
 		<Provider store={store}>
 			{/* <Task01 /> */}
-			<Task02 />
-			{/* <Task03 /> */}
+			{/* <Task02 /> */}
+			<Task03 />
 			{/* <Task04 /> */}
 			{/* <Task05 /> */}
 		</Provider>
