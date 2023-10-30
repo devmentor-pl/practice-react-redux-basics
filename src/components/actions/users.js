@@ -7,3 +7,9 @@ export const addUserAction = (user, id) => {
 		},
 	};
 };
+export const removeUserAction = id => {
+	return {
+		type: 'removeUser',
+		payload: id,
+	};
+};

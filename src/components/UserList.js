@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { addUserAction } from './actions/users';
+import { addUserAction, removeUserAction } from './actions/users';
 import UserItem from './UserItem';
 
 class UserList extends React.Component {
@@ -29,8 +29,12 @@ class UserList extends React.Component {
 			inputValue: '',
 			nextUserId: prevState.nextUserId + 1,
 		}));
-		console.log(this.props.users);
+
 		this.props.addUser(newUser);
+		console.log(this.props.users);
+	};
+	handleDelete = id => {
+		this.props.removeUser(id);
 	};
 	render() {
 		return (
@@ -43,9 +47,9 @@ class UserList extends React.Component {
 				</form>
 
 				<ul>
-					{this.props.users.map(user => (
-						<UserItem key={user.id} name={user.name} id={user.id} />
-					))}
+					{this.props.users.map(user => {
+						return <UserItem key={user.id} name={user.name} id={user.id} handleDelete={this.handleDelete} />;
+					})}
 				</ul>
 			</>
 		);
@@ -59,5 +63,6 @@ const mapStateToProps = (state, props) => {
 
 const mapActionToProps = {
 	addUser: addUserAction,
+	removeUser: removeUserAction,
 };
 export default connect(mapStateToProps, mapActionToProps)(UserList);
