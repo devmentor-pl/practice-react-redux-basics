@@ -20,15 +20,10 @@ const Task01 = () => {
 
 		const subject = new Subject();
 
-		const subscriber1 = data => console.log(`sub1 -> ${data}`);
-		subject.subscribe(subscriber1);
+		subject.subscribe(setEventTagName);
+		subject.subscribe(setEventTime);
+		subject.subscribe(setEventCursorPosition);
 
-		const subscriber2 = data => console.log(`sub2 -> ${data}`);
-		subject.subscribe(subscriber2);
-
-		const notifySubscribers = () => {
-			subject.notify(`time: ${time}s, tagName: ${tagName}, position: ${cursorPosition}`);
-		};
 		return (
 			<section>
 				<h1>Task 1</h1>
@@ -38,7 +33,7 @@ const Task01 = () => {
 						setEventTime(event);
 						setEventTagName(event);
 						setEventCursorPosition(event);
-						notifySubscribers();
+						subject.notify(event);
 					}}
 				>
 					<p>
