@@ -1,13 +1,8 @@
 import React from 'react';
 import UserItem from './UserItem';
 import { connect } from 'react-redux'
+import { addUser } from '../actions/actions';
 
-function addUser(data) {
-    return {
-        type: 'addUser',
-        payload: {data: data}
-    }
-}
 
 class UserList extends React.Component {
     state = {
@@ -19,7 +14,7 @@ class UserList extends React.Component {
         const { userName } = this.state
         const { users, addUser } = this.props
         const usersIds = users.map(u => u.id)
-        console.log(usersIds)
+
         addUser({name: userName, id: usersIds.length === 0 ? 1 : Math.max(...usersIds) + 1})
         this.setState({
             userName: ''
