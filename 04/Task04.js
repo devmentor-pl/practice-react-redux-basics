@@ -1,6 +1,5 @@
 import React from 'react';
 import UserList from './../src/components/UserList';
-import { useSelector } from 'react-redux';
 
 const Task04 = () => {
     return (
