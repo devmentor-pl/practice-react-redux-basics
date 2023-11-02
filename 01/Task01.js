@@ -19,7 +19,7 @@ const Task01 = () => {
 		};
 
 		const subject = new Subject();
-
+		
 		subject.subscribe(setEventTagName);
 		subject.subscribe(setEventTime);
 		subject.subscribe(setEventCursorPosition);
@@ -30,9 +30,6 @@ const Task01 = () => {
 
 				<div
 					onClick={event => {
-						setEventTime(event);
-						setEventTagName(event);
-						setEventCursorPosition(event);
 						subject.notify(event);
 					}}
 				>
