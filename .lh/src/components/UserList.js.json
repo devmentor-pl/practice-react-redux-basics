@@ -1,0 +1,310 @@
+{
+    "sourceFile": "src/components/UserList.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 73,
+            "patches": [
+                {
+                    "date": 1695296656310,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1695296662339,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n class UserList extends React.Component {\n     render() {\n         return (\n             <>\n-                <form onSub>\n+                <form onSubmit={handleSubmit}>\n                     <div>\n                         <input />\n                         <input type=\"submit\" value=\"dodaj\" />\n                     </div>\n"
+                },
+                {
+                    "date": 1695296670134,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,25 @@\n+import React from 'react';\n+import UserItem from './UserItem';\n+\n+class UserList extends React.Component {\n+    const handleSubmit = \n+\n+    render() {\n+        return (\n+            <>\n+                <form onSubmit={handleSubmit}>\n+                    <div>\n+                        <input />\n+                        <input type=\"submit\" value=\"dodaj\" />\n+                    </div>\n+                </form>\n+\n+                <ul>\n+                    <UserItem />\n+                </ul>\n+            </>\n+        )\n+    }\n+}\n+\n+export default UserList;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1695296675315,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,33 +1,12 @@\n import React from 'react';\n import UserItem from './UserItem';\n \n class UserList extends React.Component {\n-    const handleSubmit = \n-\n-    render() {\n-        return (\n-            <>\n-                <form onSubmit={handleSubmit}>\n-                    <div>\n-                        <input />\n-                        <input type=\"submit\" value=\"dodaj\" />\n-                    </div>\n-                </form>\n-\n-                <ul>\n-                    <UserItem />\n-                </ul>\n-            </>\n-        )\n+    const handleSubmit = (e) => {\n+        \n     }\n-}\n \n-export default UserList;\n-import React from 'react';\n-import UserItem from './UserItem';\n-\n-class UserList extends React.Component {\n     render() {\n         return (\n             <>\n                 <form onSubmit={handleSubmit}>\n"
+                },
+                {
+                    "date": 1695296690005,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,27 +1,25 @@\n import React from 'react';\n import UserItem from './UserItem';\n \n class UserList extends React.Component {\n-    const handleSubmit = (e) => {\n-        \n-    }\n+    handleSubmit = e => {};\n \n     render() {\n         return (\n             <>\n                 <form onSubmit={handleSubmit}>\n                     <div>\n                         <input />\n-                        <input type=\"submit\" value=\"dodaj\" />\n+                        <input type='submit' value='dodaj' />\n                     </div>\n                 </form>\n \n                 <ul>\n                     <UserItem />\n                 </ul>\n             </>\n-        )\n+        );\n     }\n\\ No newline at end of file\n }\n \n-export default UserList;\n+export default UserList;\n"
+                },
+                {
+                    "date": 1695296695891,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,27 @@\n+import React from 'react';\n+import UserItem from './UserItem';\n+\n+class UserList extends React.Component {\n+    handleSubmit = e => {\n+        e.preve\n+    };\n+\n+    render() {\n+        return (\n+            <>\n+                <form onSubmit={handleSubmit}>\n+                    <div>\n+                        <input />\n+                        <input type='submit' value='dodaj' />\n+                    </div>\n+                </form>\n+\n+                <ul>\n+                    <UserItem />\n+                </ul>\n+            </>\n+        );\n+    }\n+}\n+\n+export default UserList;\n"
+                },
+                {
+                    "date": 1695296707557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,15 +2,15 @@\n import UserItem from './UserItem';\n \n class UserList extends React.Component {\n     handleSubmit = e => {\n-        e.preve\n+        e.preventDefault();\n     };\n \n     render() {\n         return (\n             <>\n-                <form onSubmit={handleSubmit}>\n+                <form onSubmit={this.handleSubmit}>\n                     <div>\n                         <input />\n                         <input type='submit' value='dodaj' />\n                     </div>\n@@ -24,29 +24,4 @@\n     }\n }\n \n export default UserList;\n-import React from 'react';\n-import UserItem from './UserItem';\n-\n-class UserList extends React.Component {\n-    handleSubmit = e => {};\n-\n-    render() {\n-        return (\n-            <>\n-                <form onSubmit={handleSubmit}>\n-                    <div>\n-                        <input />\n-                        <input type='submit' value='dodaj' />\n-                    </div>\n-                </form>\n-\n-                <ul>\n-                    <UserItem />\n-                </ul>\n-            </>\n-        );\n-    }\n-}\n-\n-export default UserList;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1695296983955,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,28 @@\n+import React from 'react';\n+import UserItem from './UserItem';\n+import \n+\n+class UserList extends React.Component {\n+    handleSubmit = e => {\n+        e.preventDefault();\n+    };\n+\n+    render() {\n+        return (\n+            <>\n+                <form onSubmit={this.handleSubmit}>\n+                    <div>\n+                        <input />\n+                        <input type='submit' value='dodaj' />\n+                    </div>\n+                </form>\n+\n+                <ul>\n+                    <UserItem />\n+                </ul>\n+            </>\n+        );\n+    }\n+}\n+\n+export default UserList;\n"
+                },
+                {
+                    "date": 1695309076650,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,55 +1,24 @@\n import React from 'react';\n import UserItem from './UserItem';\n-import \n+import {connect} from 'react-redux'\n \n class UserList extends React.Component {\n-    handleSubmit = e => {\n-        e.preventDefault();\n-    };\n-\n     render() {\n         return (\n             <>\n-                <form onSubmit={this.handleSubmit}>\n+                <form>\n                     <div>\n                         <input />\n-                        <input type='submit' value='dodaj' />\n+                        <input type=\"submit\" value=\"dodaj\" />\n                     </div>\n                 </form>\n \n                 <ul>\n                     <UserItem />\n                 </ul>\n             </>\n-        );\n+        )\n     }\n }\n \n-export default UserList;\n-import React from 'react';\n-import UserItem from './UserItem';\n-\n-class UserList extends React.Component {\n-    handleSubmit = e => {\n-        e.preventDefault();\n-    };\n-\n-    render() {\n-        return (\n-            <>\n-                <form onSubmit={this.handleSubmit}>\n-                    <div>\n-                        <input />\n-                        <input type='submit' value='dodaj' />\n-                    </div>\n-                </form>\n-\n-                <ul>\n-                    <UserItem />\n-                </ul>\n-            </>\n-        );\n-    }\n-}\n-\n-export default UserList;\n+export default UserList;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1695309086073,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,26 @@\n+import React from 'react';\n+import UserItem from './UserItem';\n+import {connect} from 'react-redux'\n+\n+import {addUs}\n+\n+class UserList extends React.Component {\n+    render() {\n+        return (\n+            <>\n+                <form>\n+                    <div>\n+                        <input />\n+                        <input type=\"submit\" value=\"dodaj\" />\n+                    </div>\n+                </form>\n+\n+                <ul>\n+                    <UserItem />\n+                </ul>\n+            </>\n+        )\n+    }\n+}\n+\n+export default UserList;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1695309120804,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\n import UserItem from './UserItem';\n import {connect} from 'react-redux'\n \n-import {addUs}\n+import {addUserAction} from '../'\n \n class UserList extends React.Component {\n     render() {\n         return (\n@@ -22,29 +22,5 @@\n         )\n     }\n }\n \n-export default UserList;\n-import React from 'react';\n-import UserItem from './UserItem';\n-import {connect} from 'react-redux'\n-\n-class UserList extends React.Component {\n-    render() {\n-        return (\n-            <>\n-                <form>\n-                    <div>\n-                        <input />\n-                        <input type=\"submit\" value=\"dodaj\" />\n-                    </div>\n-                </form>\n-\n-                <ul>\n-                    <UserItem />\n-                </ul>\n-            </>\n-        )\n-    }\n-}\n-\n export default UserList;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1695309213332,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,26 +1,26 @@\n import React from 'react';\n import UserItem from './UserItem';\n-import {connect} from 'react-redux'\n+import { connect } from 'react-redux';\n \n-import {addUserAction} from '../'\n+import { addUserAction } from '../actions/user';\n \n class UserList extends React.Component {\n     render() {\n         return (\n             <>\n                 <form>\n                     <div>\n                         <input />\n-                        <input type=\"submit\" value=\"dodaj\" />\n+                        <input type='submit' value='dodaj' />\n                     </div>\n                 </form>\n \n                 <ul>\n                     <UserItem />\n                 </ul>\n             </>\n-        )\n+        );\n\\ No newline at end of file\n     }\n }\n \n-export default UserList;\n+export default connect(UserList;\n"
+                },
+                {
+                    "date": 1695309223030,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,5 +22,5 @@\n         );\n     }\n }\n \n-export default connect(UserList;\n\\ No newline at end of file\n+export default connect()(UserList);\n"
+                },
+                {
+                    "date": 1695309237223,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,5 +22,5 @@\n         );\n     }\n }\n \n-export default connect()(UserList);\n+export default connect(null, mapActionsToProps)(UserList);\n"
+                },
+                {
+                    "date": 1695309252143,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,5 +22,5 @@\n         );\n     }\n }\n \n-export default connect(null, mapActionsToProps)(UserList);\n+export default connect(null, mapActionToProps)(UserList);\n"
+                },
+                {
+                    "date": 1695309273452,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from 'react';\n import UserItem from './UserItem';\n-import { connect } from 'react-redux';\n+import { connect, map } from 'react-redux';\n \n import { addUserAction } from '../actions/user';\n \n class UserList extends React.Component {\n"
+                },
+                {
+                    "date": 1695309279462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from 'react';\n import UserItem from './UserItem';\n-import { connect, map } from 'react-redux';\n+import { connect, mapActionToProps, MapStateToProps } from 'react-redux';\n \n import { addUserAction } from '../actions/user';\n \n class UserList extends React.Component {\n"
+                },
+                {
+                    "date": 1695309288082,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,26 @@\n+import React from 'react';\n+import UserItem from './UserItem';\n+import { connect, mapActionToProps, MapStateToProps } from 'react-redux';\n+\n+import { addUserAction } from '../actions/user';\n+\n+class UserList extends React.Component {\n+    render() {\n+        return (\n+            <>\n+                <form>\n+                    <div>\n+                        <input />\n+                        <input type='submit' value='dodaj' />\n+                    </div>\n+                </form>\n+\n+                <ul>\n+                    <UserItem />\n+                </ul>\n+            </>\n+        );\n+    }\n+}\n+\n+export default connect(MapStateToProps, mapActionToProps)(UserList);\n"
+                },
+                {
+                    "date": 1695309295469,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,26 @@\n+import React from 'react';\n+import UserItem from './UserItem';\n+import { connect, mapActionToProps, MapStateToProps } from 'react-redux';\n+\n+import { addUserAction } from '../actions/user';\n+\n+class UserList extends React.Component {\n+    render() {\n+        return (\n+            <>\n+                <form>\n+                    <div>\n+                        <input />\n+                        <input type='submit' value='dodaj' />\n+                    </div>\n+                </form>\n+\n+                <ul>\n+                    <UserItem />\n+                </ul>\n+            </>\n+        );\n+    }\n+}\n+\n+export default connect(mapStateToProps, mapActionToProps)(UserList);\n"
+                },
+                {
+                    "date": 1695309310861,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from 'react';\n import UserItem from './UserItem';\n-import { connect, mapActionToProps, MapStateToProps } from 'react-redux';\n+import { connect, mapActionToProps } from 'react-redux';\n \n import { addUserAction } from '../actions/user';\n \n class UserList extends React.Component {\n@@ -23,56 +23,4 @@\n     }\n }\n \n export default connect(mapStateToProps, mapActionToProps)(UserList);\n-import React from 'react';\n-import UserItem from './UserItem';\n-import { connect, mapActionToProps, MapStateToProps } from 'react-redux';\n-\n-import { addUserAction } from '../actions/user';\n-\n-class UserList extends React.Component {\n-    render() {\n-        return (\n-            <>\n-                <form>\n-                    <div>\n-                        <input />\n-                        <input type='submit' value='dodaj' />\n-                    </div>\n-                </form>\n-\n-                <ul>\n-                    <UserItem />\n-                </ul>\n-            </>\n-        );\n-    }\n-}\n-\n-export default connect(MapStateToProps, mapActionToProps)(UserList);\n-import React from 'react';\n-import UserItem from './UserItem';\n-import { connect, mapActionToProps, MapStateToProps } from 'react-redux';\n-\n-import { addUserAction } from '../actions/user';\n-\n-class UserList extends React.Component {\n-    render() {\n-        return (\n-            <>\n-                <form>\n-                    <div>\n-                        <input />\n-                        <input type='submit' value='dodaj' />\n-                    </div>\n-                </form>\n-\n-                <ul>\n-                    <UserItem />\n-                </ul>\n-            </>\n-        );\n-    }\n-}\n-\n-export default connect(null, mapActionToProps)(UserList);\n"
+                },
+                {
+                    "date": 1695309325715,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from 'react';\n import UserItem from './UserItem';\n-import { connect, mapActionToProps } from 'react-redux';\n+import { connect } from 'react-redux';\n \n import { addUserAction } from '../actions/user';\n \n class UserList extends React.Component {\n@@ -22,5 +22,5 @@\n         );\n     }\n }\n \n-export default connect(mapStateToProps, mapActionToProps)(UserList);\n+export default connect(null, mapActionToProps)(UserList);\n"
+                },
+                {
+                    "date": 1695309331232,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import React from 'react';\n import UserItem from './UserItem';\n import { connect } from 'react-redux';\n+import { mapActionToProps } from 'redux';\n \n import { addUserAction } from '../actions/user';\n \n class UserList extends React.Component {\n"
+                },
+                {
+                    "date": 1695309424406,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,7 @@\n import React from 'react';\n import UserItem from './UserItem';\n import { connect } from 'react-redux';\n-import { mapActionToProps } from 'redux';\n \n import { addUserAction } from '../actions/user';\n \n class UserList extends React.Component {\n@@ -23,5 +22,7 @@\n         );\n     }\n }\n \n+\n+\n export default connect(null, mapActionToProps)(UserList);\n"
+                },
+                {
+                    "date": 1695309429636,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,7 +22,9 @@\n         );\n     }\n }\n \n+const mapActionToProps = {\n+    \n+}\n \n-\n export default connect(null, mapActionToProps)(UserList);\n"
+                },
+                {
+                    "date": 1695309435268,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,8 @@\n     }\n }\n \n const mapActionToProps = {\n-    \n+    add: \n }\n \n export default connect(null, mapActionToProps)(UserList);\n"
+                },
+                {
+                    "date": 1695309442564,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,8 @@\n     }\n }\n \n const mapActionToProps = {\n-    add: \n-}\n+    addUser: addUserAction,\n+};\n \n export default connect(null, mapActionToProps)(UserList);\n"
+                },
+                {
+                    "date": 1695309509329,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import React from 'react';\n+import React, {useState} from 'react';\n import UserItem from './UserItem';\n import { connect } from 'react-redux';\n \n import { addUserAction } from '../actions/user';\n"
+                },
+                {
+                    "date": 1695309516524,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n \n import { addUserAction } from '../actions/user';\n \n class UserList extends React.Component {\n+    const [newUser, set]\n     render() {\n         return (\n             <>\n                 <form>\n"
+                },
+                {
+                    "date": 1695309522212,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n import { addUserAction } from '../actions/user';\n \n class UserList extends React.Component {\n-    const [newUser, set]\n+    const [newUser, setNewUser] = useState()\n     render() {\n         return (\n             <>\n                 <form>\n"
+                },
+                {
+                    "date": 1695309530676,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n import { addUserAction } from '../actions/user';\n \n class UserList extends React.Component {\n-    const [newUser, setNewUser] = useState()\n+    const [userInput, setNewUser] = useState('');\n     render() {\n         return (\n             <>\n                 <form>\n"
+                },
+                {
+                    "date": 1695309568407,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n import { addUserAction } from '../actions/user';\n \n class UserList extends React.Component {\n-    const [userInput, setNewUser] = useState('');\n+    \n     render() {\n         return (\n             <>\n                 <form>\n"
+                },
+                {
+                    "date": 1695309577991,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import React, {useState} from 'react';\n+import React from 'react';\n import UserItem from './UserItem';\n import { connect } from 'react-redux';\n \n import { addUserAction } from '../actions/user';\n"
+                },
+                {
+                    "date": 1695309669075,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,10 @@\n \n import { addUserAction } from '../actions/user';\n \n class UserList extends React.Component {\n+\n+    state: {}\n     \n     render() {\n         return (\n             <>\n"
+                },
+                {
+                    "date": 1695309677604,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n import { addUserAction } from '../actions/user';\n \n class UserList extends React.Component {\n \n-    state: {}\n+    state: {userInput}\n     \n     render() {\n         return (\n             <>\n"
+                },
+                {
+                    "date": 1695309694244,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,11 +4,10 @@\n \n import { addUserAction } from '../actions/user';\n \n class UserList extends React.Component {\n+    state = { inputValue: '' };\n \n-    state: {userInput}\n-    \n     render() {\n         return (\n             <>\n                 <form>\n"
+                },
+                {
+                    "date": 1695309784597,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,14 @@\n \n import { addUserAction } from '../actions/user';\n \n class UserList extends React.Component {\n-    state = { inputValue: '' };\n+    constructor(props) {\n+        super(props);\n+        this.state = {\n+            input: '',\n+        };\n+    }\n \n     render() {\n         return (\n             <>\n"
+                },
+                {
+                    "date": 1695309789837,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n import { addUserAction } from '../actions/user';\n \n class UserList extends React.Component {\n     constructor(props) {\n-        super(props);\n+        super();\n         this.state = {\n             input: '',\n         };\n     }\n"
+                },
+                {
+                    "date": 1695309898742,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,12 +4,12 @@\n \n import { addUserAction } from '../actions/user';\n \n class UserList extends React.Component {\n-    constructor(props) {\n+    constructor() {\n         super();\n         this.state = {\n-            input: '',\n+            userInput: '',\n         };\n     }\n \n     render() {\n"
+                },
+                {
+                    "date": 1695309944824,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n         return (\n             <>\n                 <form>\n                     <div>\n-                        <input />\n+                        <input onChange={this.handleChange}/>\n                         <input type='submit' value='dodaj' />\n                     </div>\n                 </form>\n \n"
+                },
+                {
+                    "date": 1695309950707,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,10 @@\n             userInput: '',\n         };\n     }\n \n+    handleChange()\n+\n     render() {\n         return (\n             <>\n                 <form>\n"
+                },
+                {
+                    "date": 1695309960344,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,11 @@\n             userInput: '',\n         };\n     }\n \n-    handleChange()\n+    handleChange(e) {\n+        this.setState()\n+    }\n \n     render() {\n         return (\n             <>\n"
+                },
+                {
+                    "date": 1695309969933,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,17 +12,17 @@\n         };\n     }\n \n     handleChange(e) {\n-        this.setState()\n+        this.setState({ userInput: e.target.value });\n     }\n \n     render() {\n         return (\n             <>\n                 <form>\n                     <div>\n-                        <input onChange={this.handleChange}/>\n+                        <input onChange={this.handleChange} />\n                         <input type='submit' value='dodaj' />\n                     </div>\n                 </form>\n \n"
+                },
+                {
+                    "date": 1695310008822,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,10 @@\n         this.setState({ userInput: e.target.value });\n     }\n \n     render() {\n+        const userInputValue = this.state.\n+\n         return (\n             <>\n                 <form>\n                     <div>\n"
+                },
+                {
+                    "date": 1695310017016,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n         this.setState({ userInput: e.target.value });\n     }\n \n     render() {\n-        const userInputValue = this.state.\n+        const {userInput} = this.state.userInput\n \n         return (\n             <>\n                 <form>\n"
+                },
+                {
+                    "date": 1695310023975,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,43 @@\n+import React from 'react';\n+import UserItem from './UserItem';\n+import { connect } from 'react-redux';\n+\n+import { addUserAction } from '../actions/user';\n+\n+class UserList extends React.Component {\n+    constructor() {\n+        super();\n+        this.state = {\n+            userInput: '',\n+        };\n+    }\n+\n+    handleChange(e) {\n+        this.setState({ userInput: e.target.value });\n+    }\n+\n+    render() {\n+        const { userInput } = this.state;\n+\n+        return (\n+            <>\n+                <form>\n+                    <div>\n+                        <input onChange={this.handleChange} value={} />\n+                        <input type='submit' value='dodaj' />\n+                    </div>\n+                </form>\n+\n+                <ul>\n+                    <UserItem />\n+                </ul>\n+            </>\n+        );\n+    }\n+}\n+\n+const mapActionToProps = {\n+    addUser: addUserAction,\n+};\n+\n+export default connect(null, mapActionToProps)(UserList);\n"
+                },
+                {
+                    "date": 1695310064199,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n         return (\n             <>\n                 <form>\n                     <div>\n-                        <input onChange={this.handleChange} value={} />\n+                        <input onChange={this.handleChange} value={userInput} />\n                         <input type='submit' value='dodaj' />\n                     </div>\n                 </form>\n \n@@ -40,47 +40,4 @@\n     addUser: addUserAction,\n };\n \n export default connect(null, mapActionToProps)(UserList);\n-import React from 'react';\n-import UserItem from './UserItem';\n-import { connect } from 'react-redux';\n-\n-import { addUserAction } from '../actions/user';\n-\n-class UserList extends React.Component {\n-    constructor() {\n-        super();\n-        this.state = {\n-            userInput: '',\n-        };\n-    }\n-\n-    handleChange(e) {\n-        this.setState({ userInput: e.target.value });\n-    }\n-\n-    render() {\n-        const {userInput} = this.state.userInput\n-\n-        return (\n-            <>\n-                <form>\n-                    <div>\n-                        <input onChange={this.handleChange} />\n-                        <input type='submit' value='dodaj' />\n-                    </div>\n-                </form>\n-\n-                <ul>\n-                    <UserItem />\n-                </ul>\n-            </>\n-        );\n-    }\n-}\n-\n-const mapActionToProps = {\n-    addUser: addUserAction,\n-};\n-\n-export default connect(null, mapActionToProps)(UserList);\n"
+                },
+                {
+                    "date": 1695310217910,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n         const { userInput } = this.state;\n \n         return (\n             <>\n-                <form>\n+                <form onSubmit=>\n                     <div>\n                         <input onChange={this.handleChange} value={userInput} />\n                         <input type='submit' value='dodaj' />\n                     </div>\n"
+                },
+                {
+                    "date": 1695310234786,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,12 @@\n             userInput: '',\n         };\n     }\n \n+    handleSubmit(e) {\n+        e.preventDefault();\n+    }\n+\n     handleChange(e) {\n         this.setState({ userInput: e.target.value });\n     }\n \n@@ -20,9 +24,9 @@\n         const { userInput } = this.state;\n \n         return (\n             <>\n-                <form onSubmit=>\n+                <form onSubmit={handleSubmit}>\n                     <div>\n                         <input onChange={this.handleChange} value={userInput} />\n                         <input type='submit' value='dodaj' />\n                     </div>\n"
+                },
+                {
+                    "date": 1695310270459,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n         const { userInput } = this.state;\n \n         return (\n             <>\n-                <form onSubmit={handleSubmit}>\n+                <form onSubmit={this.handleSubmit}>\n                     <div>\n                         <input onChange={this.handleChange} value={userInput} />\n                         <input type='submit' value='dodaj' />\n                     </div>\n"
+                },
+                {
+                    "date": 1695310369213,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n import { addUserAction } from '../actions/user';\n \n class UserList extends React.Component {\n-    constructor() {\n+    constructor(props) {\n         super();\n         this.state = {\n             userInput: '',\n         };\n"
+                },
+                {
+                    "date": 1695310392339,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,11 +5,11 @@\n import { addUserAction } from '../actions/user';\n \n class UserList extends React.Component {\n     constructor(props) {\n-        super();\n+        super(props);\n         this.state = {\n-            userInput: '',\n+            userInput: 'działa',\n         };\n     }\n \n     handleSubmit(e) {\n"
+                },
+                {
+                    "date": 1695310412617,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,9 @@\n         e.preventDefault();\n     }\n \n     handleChange(e) {\n+        console.log(e.target.value);\n         this.setState({ userInput: e.target.value });\n     }\n \n     render() {\n"
+                },
+                {
+                    "date": 1695310531889,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n         super(props);\n         this.state = {\n             userInput: 'działa',\n         };\n-    }\n+    \n \n     handleSubmit(e) {\n         e.preventDefault();\n     }\n"
+                },
+                {
+                    "date": 1695310537110,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,47 @@\n+import React from 'react';\n+import UserItem from './UserItem';\n+import { connect } from 'react-redux';\n+\n+import { addUserAction } from '../actions/user';\n+\n+class UserList extends React.Component {\n+    \n+        this.state = {\n+            userInput: 'działa',\n+\n+    \n+\n+    handleSubmit(e) {\n+        e.preventDefault();\n+    }\n+\n+    handleChange(e) {\n+        console.log(e.target.value);\n+        this.setState({ userInput: e.target.value });\n+    }\n+\n+    render() {\n+        const { userInput } = this.state;\n+\n+        return (\n+            <>\n+                <form onSubmit={this.handleSubmit}>\n+                    <div>\n+                        <input onChange={this.handleChange} value={userInput} />\n+                        <input type='submit' value='dodaj' />\n+                    </div>\n+                </form>\n+\n+                <ul>\n+                    <UserItem />\n+                </ul>\n+            </>\n+        );\n+    }\n+}\n+\n+const mapActionToProps = {\n+    addUser: addUserAction,\n+};\n+\n+export default connect(null, mapActionToProps)(UserList);\n"
+                },
+                {
+                    "date": 1695310543776,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,14 +4,12 @@\n \n import { addUserAction } from '../actions/user';\n \n class UserList extends React.Component {\n-    \n-        this.state = {\n-            userInput: 'działa',\n+    state = {\n+        userInput: 'działa',\n+    };\n \n-    \n-\n     handleSubmit(e) {\n         e.preventDefault();\n     }\n \n@@ -44,52 +42,4 @@\n     addUser: addUserAction,\n };\n \n export default connect(null, mapActionToProps)(UserList);\n-import React from 'react';\n-import UserItem from './UserItem';\n-import { connect } from 'react-redux';\n-\n-import { addUserAction } from '../actions/user';\n-\n-class UserList extends React.Component {\n-    constructor(props) {\n-        super(props);\n-        this.state = {\n-            userInput: 'działa',\n-        };\n-    \n-\n-    handleSubmit(e) {\n-        e.preventDefault();\n-    }\n-\n-    handleChange(e) {\n-        console.log(e.target.value);\n-        this.setState({ userInput: e.target.value });\n-    }\n-\n-    render() {\n-        const { userInput } = this.state;\n-\n-        return (\n-            <>\n-                <form onSubmit={this.handleSubmit}>\n-                    <div>\n-                        <input onChange={this.handleChange} value={userInput} />\n-                        <input type='submit' value='dodaj' />\n-                    </div>\n-                </form>\n-\n-                <ul>\n-                    <UserItem />\n-                </ul>\n-            </>\n-        );\n-    }\n-}\n-\n-const mapActionToProps = {\n-    addUser: addUserAction,\n-};\n-\n-export default connect(null, mapActionToProps)(UserList);\n"
+                },
+                {
+                    "date": 1695310605189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,49 @@\n+import React from 'react';\n+import UserItem from './UserItem';\n+import { connect } from 'react-redux';\n+\n+import { addUserAction } from '../actions/user';\n+\n+class UserList extends React.Component {\n+    state = {\n+        userInput: 'działa',\n+    };\n+\n+    handleSubmit(e) {\n+        e.preventDefault();\n+    }\n+\n+    handleChange(e) {\n+        console.log(e.target.value);\n+        this.setState({ userInput: e.target.value });\n+    }\n+\n+    handleChange = event => {\n+        this.setState({input: event.target.value})\n+    }\n+\n+    render() {\n+        const { userInput } = this.state;\n+\n+        return (\n+            <>\n+                <form onSubmit={this.handleSubmit}>\n+                    <div>\n+                        <input onChange={this.handleChange} value={userInput} />\n+                        <input type='submit' value='dodaj' />\n+                    </div>\n+                </form>\n+\n+                <ul>\n+                    <UserItem />\n+                </ul>\n+            </>\n+        );\n+    }\n+}\n+\n+const mapActionToProps = {\n+    addUser: addUserAction,\n+};\n+\n+export default connect(null, mapActionToProps)(UserList);\n"
+                },
+                {
+                    "date": 1695310610921,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,12 +17,8 @@\n         console.log(e.target.value);\n         this.setState({ userInput: e.target.value });\n     }\n \n-    handleChange = event => {\n-        this.setState({input: event.target.value})\n-    }\n-\n     render() {\n         const { userInput } = this.state;\n \n         return (\n@@ -46,49 +42,4 @@\n     addUser: addUserAction,\n };\n \n export default connect(null, mapActionToProps)(UserList);\n-import React from 'react';\n-import UserItem from './UserItem';\n-import { connect } from 'react-redux';\n-\n-import { addUserAction } from '../actions/user';\n-\n-class UserList extends React.Component {\n-    state = {\n-        userInput: 'działa',\n-    };\n-\n-    handleSubmit(e) {\n-        e.preventDefault();\n-    }\n-\n-    handleChange(e) {\n-        console.log(e.target.value);\n-        this.setState({ userInput: e.target.value });\n-    }\n-\n-    render() {\n-        const { userInput } = this.state;\n-\n-        return (\n-            <>\n-                <form onSubmit={this.handleSubmit}>\n-                    <div>\n-                        <input onChange={this.handleChange} value={userInput} />\n-                        <input type='submit' value='dodaj' />\n-                    </div>\n-                </form>\n-\n-                <ul>\n-                    <UserItem />\n-                </ul>\n-            </>\n-        );\n-    }\n-}\n-\n-const mapActionToProps = {\n-    addUser: addUserAction,\n-};\n-\n-export default connect(null, mapActionToProps)(UserList);\n"
+                },
+                {
+                    "date": 1695310846884,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,11 +12,15 @@\n     handleSubmit(e) {\n         e.preventDefault();\n     }\n \n-    handleChange(e) {\n+    handleChange = e => {\n         console.log(e.target.value);\n         this.setState({ userInput: e.target.value });\n+    };\n+\n+    handleChange = event => {\n+        this.setState({input: event.target.value})\n     }\n \n     render() {\n         const { userInput } = this.state;\n"
+                },
+                {
+                    "date": 1695310853664,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n import { addUserAction } from '../actions/user';\n \n class UserList extends React.Component {\n     state = {\n-        userInput: 'działa',\n+        input: 'działa',\n     };\n \n     handleSubmit(e) {\n         e.preventDefault();\n"
+                },
+                {
+                    "date": 1695310862505,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,15 +22,15 @@\n         this.setState({input: event.target.value})\n     }\n \n     render() {\n-        const { userInput } = this.state;\n+        const { input } = this.state;\n \n         return (\n             <>\n                 <form onSubmit={this.handleSubmit}>\n                     <div>\n-                        <input onChange={this.handleChange} value={userInput} />\n+                        <input onChange={this.handleChange} value={input} />\n                         <input type='submit' value='dodaj' />\n                     </div>\n                 </form>\n \n"
+                },
+                {
+                    "date": 1695310869155,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n import { addUserAction } from '../actions/user';\n \n class UserList extends React.Component {\n     state = {\n-        input: 'działa',\n+        userInput: 'działa',\n     };\n \n     handleSubmit(e) {\n         e.preventDefault();\n@@ -17,20 +17,20 @@\n         console.log(e.target.value);\n         this.setState({ userInput: e.target.value });\n     };\n \n-    handleChange = event => {\n+      handleChange = event => {\n         this.setState({input: event.target.value})\n     }\n \n     render() {\n-        const { input } = this.state;\n+        const { userInput } = this.state;\n \n         return (\n             <>\n                 <form onSubmit={this.handleSubmit}>\n                     <div>\n-                        <input onChange={this.handleChange} value={input} />\n+                        <input onChange={this.handleChange} value={userInput} />\n                         <input type='submit' value='dodaj' />\n                     </div>\n                 </form>\n \n"
+                },
+                {
+                    "date": 1695310879382,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n import { addUserAction } from '../actions/user';\n \n class UserList extends React.Component {\n     state = {\n-        userInput: 'działa',\n+        userInput: '',\n     };\n \n     handleSubmit(e) {\n         e.preventDefault();\n"
+                },
+                {
+                    "date": 1695310888672,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,12 +17,8 @@\n         console.log(e.target.value);\n         this.setState({ userInput: e.target.value });\n     };\n \n-      handleChange = event => {\n-        this.setState({input: event.target.value})\n-    }\n-\n     render() {\n         const { userInput } = this.state;\n \n         return (\n"
+                },
+                {
+                    "date": 1695325598453,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,10 @@\n     };\n \n     handleSubmit(e) {\n         e.preventDefault();\n+\n+        \n     }\n \n     handleChange = e => {\n         console.log(e.target.value);\n"
+                },
+                {
+                    "date": 1695325649292,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \n     handleSubmit(e) {\n         e.preventDefault();\n \n-        \n+        console.log(this.props.)\n     }\n \n     handleChange = e => {\n         console.log(e.target.value);\n"
+                },
+                {
+                    "date": 1695325655427,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \n     handleSubmit(e) {\n         e.preventDefault();\n \n-        console.log(this.props.)\n+        console.log(this.props.addUser)\n     }\n \n     handleChange = e => {\n         console.log(e.target.value);\n"
+                },
+                {
+                    "date": 1695325745764,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,16 +4,17 @@\n \n import { addUserAction } from '../actions/user';\n \n class UserList extends React.Component {\n+    constructor\n     state = {\n         userInput: '',\n     };\n \n     handleSubmit(e) {\n         e.preventDefault();\n \n-        console.log(this.props.addUser)\n+        console.log(this.props.addUser());\n     }\n \n     handleChange = e => {\n         console.log(e.target.value);\n"
+                },
+                {
+                    "date": 1695325762147,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,18 +4,17 @@\n \n import { addUserAction } from '../actions/user';\n \n class UserList extends React.Component {\n-    constructor\n     state = {\n         userInput: '',\n     };\n \n-    handleSubmit(e) {\n+    handleSubmit = e => {\n         e.preventDefault();\n \n         console.log(this.props.addUser());\n-    }\n+    };\n \n     handleChange = e => {\n         console.log(e.target.value);\n         this.setState({ userInput: e.target.value });\n"
+                },
+                {
+                    "date": 1695325801243,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \n     handleSubmit = e => {\n         e.preventDefault();\n \n-        console.log(this.props.addUser());\n+        console.log(this.props.addUser);\n     };\n \n     handleChange = e => {\n         console.log(e.target.value);\n"
+                },
+                {
+                    "date": 1695325937933,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,5 +43,9 @@\n const mapActionToProps = {\n     addUser: addUserAction,\n };\n \n+const mapStateToProps = {\n+    \n+}\n+\n export default connect(null, mapActionToProps)(UserList);\n"
+                },
+                {
+                    "date": 1695325943354,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,8 +44,10 @@\n     addUser: addUserAction,\n };\n \n const mapStateToProps = {\n-    \n+    return {\n+        \n+    }\n }\n \n export default connect(null, mapActionToProps)(UserList);\n"
+                },
+                {
+                    "date": 1695325961551,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,11 +43,11 @@\n const mapActionToProps = {\n     addUser: addUserAction,\n };\n \n-const mapStateToProps = {\n+const mapStateToProps =  {\n     return {\n-        \n+\n     }\n }\n \n export default connect(null, mapActionToProps)(UserList);\n"
+                },
+                {
+                    "date": 1695325966774,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,11 +43,9 @@\n const mapActionToProps = {\n     addUser: addUserAction,\n };\n \n-const mapStateToProps = state, props =>{\n-    return {\n+const mapStateToProps = (state, props) => {\n+    return {};\n+};\n \n-    }\n-}\n-\n export default connect(null, mapActionToProps)(UserList);\n"
+                },
+                {
+                    "date": 1695325983951,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,53 @@\n+import React from 'react';\n+import UserItem from './UserItem';\n+import { connect } from 'react-redux';\n+\n+import { addUserAction } from '../actions/user';\n+\n+class UserList extends React.Component {\n+    state = {\n+        userInput: '',\n+    };\n+\n+    handleSubmit = e => {\n+        e.preventDefault();\n+\n+        console.log(this.props.addUser);\n+    };\n+\n+    handleChange = e => {\n+        console.log(e.target.value);\n+        this.setState({ userInput: e.target.value });\n+    };\n+\n+    render() {\n+        const { userInput } = this.state;\n+\n+        return (\n+            <>\n+                <form onSubmit={this.handleSubmit}>\n+                    <div>\n+                        <input onChange={this.handleChange} value={userInput} />\n+                        <input type='submit' value='dodaj' />\n+                    </div>\n+                </form>\n+\n+                <ul>\n+                    <UserItem />\n+                </ul>\n+            </>\n+        );\n+    }\n+}\n+\n+const mapActionToProps = {\n+    addUser: addUserAction,\n+};\n+\n+const mapStateToProps = (state, props) => {\n+    return {\n+        users: state.users,\n+    };\n+};\n+\n+export default connect(null, mapActionToProps)(UserList);\n"
+                }
+            ],
+            "date": 1695296656310,
+            "name": "Commit-0",
+            "content": "import React from 'react';\nimport UserItem from './UserItem';\n\nclass UserList extends React.Component {\n    render() {\n        return (\n            <>\n                <form onSub>\n                    <div>\n                        <input />\n                        <input type=\"submit\" value=\"dodaj\" />\n                    </div>\n                </form>\n\n                <ul>\n                    <UserItem />\n                </ul>\n            </>\n        )\n    }\n}\n\nexport default UserList;"
+        }
+    ]
+}

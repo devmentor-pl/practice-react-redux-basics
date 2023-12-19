@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/users/duck/types.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1695297592648,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1695297602659,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,2 @@\n-const ADD_USER = ''\n\\ No newline at end of file\n+const ADD_USER = 'ADD_USER';\n+const DEL\n"
+                },
+                {
+                    "date": 1695297607932,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,2 @@\n const ADD_USER = 'ADD_USER';\n-const DEL\n+const DELETE_USER = 'DELETE_USER';\n"
+                },
+                {
+                    "date": 1695297621084,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,7 @@\n const ADD_USER = 'ADD_USER';\n const DELETE_USER = 'DELETE_USER';\n+\n+export default {\n+    ADD_USER,\n+    DELETE_USER,\n+};\n"
+                }
+            ],
+            "date": 1695297592648,
+            "name": "Commit-0",
+            "content": "const ADD_USER = ''"
+        }
+    ]
+}

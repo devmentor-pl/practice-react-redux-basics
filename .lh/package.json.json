@@ -1,0 +1,18 @@
+{
+    "sourceFile": "package.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1695289238813,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1695289238812,
+            "name": "Commit-0",
+            "content": "{\n    \"name\": \"practice-react-redux-basics\",\n    \"version\": \"1.0.0\",\n    \"description\": \"\",\n    \"main\": \"index.js\",\n    \"scripts\": {\n        \"test\": \"echo \\\"Error: no test specified\\\" && exit 1\",\n        \"start\": \"webpack serve\",\n        \"build\": \"webpack --env.production\"\n    },\n    \"keywords\": [],\n    \"author\": \"\",\n    \"license\": \"ISC\",\n    \"devDependencies\": {\n        \"@babel/core\": \"^7.19.6\",\n        \"@babel/preset-env\": \"^7.19.4\",\n        \"@babel/preset-react\": \"^7.18.6\",\n        \"babel-loader\": \"^9.0.1\",\n        \"babel-plugin-styled-components\": \"^2.0.7\",\n        \"html-webpack-plugin\": \"^5.5.0\",\n        \"webpack\": \"^5.74.0\",\n        \"webpack-cli\": \"^4.10.0\",\n        \"webpack-dev-server\": \"^4.11.1\"\n    },\n    \"dependencies\": {\n        \"react\": \"^18.2.0\",\n        \"react-dom\": \"^18.2.0\",\n        \"react-redux\": \"^8.0.5\",\n        \"redux\": \"^4.2.0\"\n    }\n}\n"
+        }
+    ]
+}

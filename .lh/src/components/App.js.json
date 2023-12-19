@@ -1,0 +1,94 @@
+{
+    "sourceFile": "src/components/App.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 19,
+            "patches": [
+                {
+                    "date": 1695293551244,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1695294662578,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import React from 'react';\n+import { Provider } from 'react-redux';\n \n import Task01 from './../../01/Task01';\n import Task02 from './../../02/Task02';\n import Task03 from './../../03/Task03';\n"
+                },
+                {
+                    "date": 1695294683870,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,12 @@\n const App = () => {\n     return (\n         <>\n             {/* <Task01 /> */}\n+            <Provider>\n+\n             <Task02 />\n+            </Provider>\n             {/* <Task03 /> */}\n             {/* <Task04 /> */}\n             {/* <Task05 /> */}\n         </>\n"
+                },
+                {
+                    "date": 1695294691563,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n const App = () => {\n     return (\n         <>\n             {/* <Task01 /> */}\n-            <Provider>\n+            <Provider store={'dzia'}>\n \n             <Task02 />\n             </Provider>\n             {/* <Task03 /> */}\n"
+                },
+                {
+                    "date": 1695294776261,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,25 @@\n+import React from 'react';\n+import { Provider } from 'react-redux';\n+\n+\n+import Task01 from './../../01/Task01';\n+import Task02 from './../../02/Task02';\n+import Task03 from './../../03/Task03';\n+import Task04 from './../../04/Task04';\n+import Task05 from './../../05/Task05';\n+\n+const App = () => {\n+    return (\n+        <>\n+            {/* <Task01 /> */}\n+            <Provider store={'działa'}>\n+                <Task02 />\n+            </Provider>\n+            {/* <Task03 /> */}\n+            {/* <Task04 /> */}\n+            {/* <Task05 /> */}\n+        </>\n+    );\n+};\n+\n+export default App;\n"
+                },
+                {
+                    "date": 1695294783560,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,13 @@\n import React from 'react';\n import { Provider } from 'react-redux';\n \n-\n import Task01 from './../../01/Task01';\n import Task02 from './../../02/Task02';\n import Task03 from './../../03/Task03';\n import Task04 from './../../04/Task04';\n import Task05 from './../../05/Task05';\n+import { Store } from 'redux';\n \n const App = () => {\n     return (\n         <>\n@@ -22,30 +22,4 @@\n     );\n };\n \n export default App;\n-import React from 'react';\n-import { Provider } from 'react-redux';\n-\n-import Task01 from './../../01/Task01';\n-import Task02 from './../../02/Task02';\n-import Task03 from './../../03/Task03';\n-import Task04 from './../../04/Task04';\n-import Task05 from './../../05/Task05';\n-\n-\n-const App = () => {\n-    return (\n-        <>\n-            {/* <Task01 /> */}\n-            <Provider store={'dzia'}>\n-\n-            <Task02 />\n-            </Provider>\n-            {/* <Task03 /> */}\n-            {/* <Task04 /> */}\n-            {/* <Task05 /> */}\n-        </>\n-    )\n-}\n-\n-export default App;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1695294792299,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,25 @@\n+import React from 'react';\n+import { Provider } from 'react-redux';\n+\n+import Task01 from './../../01/Task01';\n+import Task02 from './../../02/Task02';\n+import Task03 from './../../03/Task03';\n+import Task04 from './../../04/Task04';\n+import Task05 from './../../05/Task05';\n+import store from '../'\n+\n+const App = () => {\n+    return (\n+        <>\n+            {/* <Task01 /> */}\n+            <Provider store={'działa'}>\n+                <Task02 />\n+            </Provider>\n+            {/* <Task03 /> */}\n+            {/* <Task04 /> */}\n+            {/* <Task05 /> */}\n+        </>\n+    );\n+};\n+\n+export default App;\n"
+                },
+                {
+                    "date": 1695294800728,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,25 @@\n+import React from 'react';\n+import { Provider } from 'react-redux';\n+\n+import Task01 from './../../01/Task01';\n+import Task02 from './../../02/Task02';\n+import Task03 from './../../03/Task03';\n+import Task04 from './../../04/Task04';\n+import Task05 from './../../05/Task05';\n+import store from '../store';\n+\n+const App = () => {\n+    return (\n+        <>\n+            {/* <Task01 /> */}\n+            <Provider store={'działa'}>\n+                <Task02 />\n+            </Provider>\n+            {/* <Task03 /> */}\n+            {/* <Task04 /> */}\n+            {/* <Task05 /> */}\n+        </>\n+    );\n+};\n+\n+export default App;\n"
+                },
+                {
+                    "date": 1695294806446,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n const App = () => {\n     return (\n         <>\n             {/* <Task01 /> */}\n-            <Provider store={'działa'}>\n+            <Provider store={store}>\n                 <Task02 />\n             </Provider>\n             {/* <Task03 /> */}\n             {/* <Task04 /> */}\n@@ -22,54 +22,4 @@\n     );\n };\n \n export default App;\n-import React from 'react';\n-import { Provider } from 'react-redux';\n-\n-import Task01 from './../../01/Task01';\n-import Task02 from './../../02/Task02';\n-import Task03 from './../../03/Task03';\n-import Task04 from './../../04/Task04';\n-import Task05 from './../../05/Task05';\n-import store from '../'\n-\n-const App = () => {\n-    return (\n-        <>\n-            {/* <Task01 /> */}\n-            <Provider store={'działa'}>\n-                <Task02 />\n-            </Provider>\n-            {/* <Task03 /> */}\n-            {/* <Task04 /> */}\n-            {/* <Task05 /> */}\n-        </>\n-    );\n-};\n-\n-export default App;\n-import React from 'react';\n-import { Provider } from 'react-redux';\n-\n-import Task01 from './../../01/Task01';\n-import Task02 from './../../02/Task02';\n-import Task03 from './../../03/Task03';\n-import Task04 from './../../04/Task04';\n-import Task05 from './../../05/Task05';\n-import { Store } from 'redux';\n-\n-const App = () => {\n-    return (\n-        <>\n-            {/* <Task01 /> */}\n-            <Provider store={'działa'}>\n-                <Task02 />\n-            </Provider>\n-            {/* <Task03 /> */}\n-            {/* <Task04 /> */}\n-            {/* <Task05 /> */}\n-        </>\n-    );\n-};\n-\n-export default App;\n"
+                },
+                {
+                    "date": 1695294825303,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n import Task02 from './../../02/Task02';\n import Task03 from './../../03/Task03';\n import Task04 from './../../04/Task04';\n import Task05 from './../../05/Task05';\n-import store from '../store';\n+import { store } from '../store';\n \n const App = () => {\n     return (\n         <>\n"
+                },
+                {
+                    "date": 1695295223163,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import React from 'react';\n import { Provider } from 'react-redux';\n+import create\n \n import Task01 from './../../01/Task01';\n import Task02 from './../../02/Task02';\n import Task03 from './../../03/Task03';\n"
+                },
+                {
+                    "date": 1695295230554,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,26 @@\n+import React from 'react';\n+import { Provider } from 'react-redux';\n+import {createStore}\n+\n+import Task01 from './../../01/Task01';\n+import Task02 from './../../02/Task02';\n+import Task03 from './../../03/Task03';\n+import Task04 from './../../04/Task04';\n+import Task05 from './../../05/Task05';\n+import { store } from '../store';\n+\n+const App = () => {\n+    return (\n+        <>\n+            {/* <Task01 /> */}\n+            <Provider store={store}>\n+                <Task02 />\n+            </Provider>\n+            {/* <Task03 /> */}\n+            {/* <Task04 /> */}\n+            {/* <Task05 /> */}\n+        </>\n+    );\n+};\n+\n+export default App;\n"
+                },
+                {
+                    "date": 1695295241678,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from 'react';\n import { Provider } from 'react-redux';\n-import {createStore}\n+import { createStore } from 'redux';\n \n import Task01 from './../../01/Task01';\n import Task02 from './../../02/Task02';\n import Task03 from './../../03/Task03';\n@@ -23,30 +23,4 @@\n     );\n };\n \n export default App;\n-import React from 'react';\n-import { Provider } from 'react-redux';\n-import create\n-\n-import Task01 from './../../01/Task01';\n-import Task02 from './../../02/Task02';\n-import Task03 from './../../03/Task03';\n-import Task04 from './../../04/Task04';\n-import Task05 from './../../05/Task05';\n-import { store } from '../store';\n-\n-const App = () => {\n-    return (\n-        <>\n-            {/* <Task01 /> */}\n-            <Provider store={store}>\n-                <Task02 />\n-            </Provider>\n-            {/* <Task03 /> */}\n-            {/* <Task04 /> */}\n-            {/* <Task05 /> */}\n-        </>\n-    );\n-};\n-\n-export default App;\n"
+                },
+                {
+                    "date": 1695295270527,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,15 @@\n import React from 'react';\n import { Provider } from 'react-redux';\n import { createStore } from 'redux';\n \n+const initState = { message: 'Działa' };\n+const reducer = (state = initState, action) => {\n+    return state;\n+};\n+\n+export const store = createStore(reducer);\n+\n import Task01 from './../../01/Task01';\n import Task02 from './../../02/Task02';\n import Task03 from './../../03/Task03';\n import Task04 from './../../04/Task04';\n"
+                },
+                {
+                    "date": 1695295284810,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n import Task02 from './../../02/Task02';\n import Task03 from './../../03/Task03';\n import Task04 from './../../04/Task04';\n import Task05 from './../../05/Task05';\n-import { store } from '../store';\n+// import { store } from '../store';\n \n const App = () => {\n     return (\n         <>\n"
+                },
+                {
+                    "date": 1695295350825,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n import Task02 from './../../02/Task02';\n import Task03 from './../../03/Task03';\n import Task04 from './../../04/Task04';\n import Task05 from './../../05/Task05';\n-// import { store } from '../store';\n+import { store } from '../store';\n \n const App = () => {\n     return (\n         <>\n"
+                },
+                {
+                    "date": 1695295361201,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,7 @@\n import React from 'react';\n import { Provider } from 'react-redux';\n-import { createStore } from 'redux';\n \n-const initState = { message: 'Działa' };\n-const reducer = (state = initState, action) => {\n-    return state;\n-};\n-\n-export const store = createStore(reducer);\n-\n import Task01 from './../../01/Task01';\n import Task02 from './../../02/Task02';\n import Task03 from './../../03/Task03';\n import Task04 from './../../04/Task04';\n"
+                },
+                {
+                    "date": 1695295404751,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,12 +13,12 @@\n         <>\n             {/* <Task01 /> */}\n             <Provider store={store}>\n                 <Task02 />\n+                {/* <Task03 /> */}\n+                {/* <Task04 /> */}\n+                {/* <Task05 /> */}\n             </Provider>\n-            {/* <Task03 /> */}\n-            {/* <Task04 /> */}\n-            {/* <Task05 /> */}\n         </>\n     );\n };\n \n"
+                },
+                {
+                    "date": 1695310140980,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,25 @@\n+import React from 'react';\n+import { Provider } from 'react-redux';\n+\n+import Task01 from './../../01/Task01';\n+import Task02 from './../../02/Task02';\n+import Task03 from './../../03/Task03';\n+import Task04 from './../../04/Task04';\n+import Task05 from './../../05/Task05';\n+import { store } from '../store';\n+\n+const App = () => {\n+    return (\n+        <>\n+            {/* <Task01 /> */}\n+            <Provider store={store}>\n+                <Task02 />\n+                <Task03 />\n+                <Task04 />\n+                {/* <Task05 /> */}\n+            </Provider>\n+        </>\n+    );\n+};\n+\n+export default App;\n"
+                },
+                {
+                    "date": 1695390128996,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,36 +15,11 @@\n             <Provider store={store}>\n                 <Task02 />\n                 <Task03 />\n                 <Task04 />\n-                {/* <Task05 /> */}\n+                <Task05 />\n             </Provider>\n         </>\n     );\n };\n \n export default App;\n-import React from 'react';\n-import { Provider } from 'react-redux';\n-\n-import Task01 from './../../01/Task01';\n-import Task02 from './../../02/Task02';\n-import Task03 from './../../03/Task03';\n-import Task04 from './../../04/Task04';\n-import Task05 from './../../05/Task05';\n-import { store } from '../store';\n-\n-const App = () => {\n-    return (\n-        <>\n-            {/* <Task01 /> */}\n-            <Provider store={store}>\n-                <Task02 />\n-                {/* <Task03 /> */}\n-                {/* <Task04 /> */}\n-                {/* <Task05 /> */}\n-            </Provider>\n-        </>\n-    );\n-};\n-\n-export default App;\n"
+                }
+            ],
+            "date": 1695293551244,
+            "name": "Commit-0",
+            "content": "import React from 'react';\n\nimport Task01 from './../../01/Task01';\nimport Task02 from './../../02/Task02';\nimport Task03 from './../../03/Task03';\nimport Task04 from './../../04/Task04';\nimport Task05 from './../../05/Task05';\n\n\nconst App = () => {\n    return (\n        <>\n            {/* <Task01 /> */}\n            <Task02 />\n            {/* <Task03 /> */}\n            {/* <Task04 /> */}\n            {/* <Task05 /> */}\n        </>\n    )\n}\n\nexport default App;"
+        }
+    ]
+}

@@ -1,0 +1,62 @@
+{
+    "sourceFile": "src/duck/actions.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 11,
+            "patches": [
+                {
+                    "date": 1695391366649,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1695391441376,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,15 @@\n+impo\n+\n+export const addUserAction = item => ({\n+    type: 'addUser',\n+    payload: item,\n+});\n+\n+export const removeUserAction = id => ({\n+    type: 'removeUser',\n+    payload: id,\n+});\n+\n+export const resetUsersListAction = () => ({\n+    type: 'resetUsersList',\n+});\n"
+                },
+                {
+                    "date": 1695391451796,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n-impo\n+import types from \"./types\";\n \n export const addUserAction = item => ({\n-    type: 'addUser',\n+    type: types.ADD_USER,\n     payload: item,\n });\n \n export const removeUserAction = id => ({\n@@ -12,19 +12,4 @@\n \n export const resetUsersListAction = () => ({\n     type: 'resetUsersList',\n });\n-\n-\n-export const addUserAction = item => ({\n-    type: 'addUser',\n-    payload: item,\n-});\n-\n-export const removeUserAction = id => ({\n-    type: 'removeUser',\n-    payload: id,\n-});\n-\n-export const resetUsersListAction = () => ({\n-    type: 'resetUsersList',\n-});\n"
+                },
+                {
+                    "date": 1695391457390,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     payload: item,\n });\n \n export const removeUserAction = id => ({\n-    type: 'removeUser',\n+    type: types.REMOVE_USER,\n     payload: id,\n });\n \n export const resetUsersListAction = () => ({\n"
+                },
+                {
+                    "date": 1695391463527,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import types from \"./types\";\n+import types from './types';\n \n export const addUserAction = item => ({\n     type: types.ADD_USER,\n     payload: item,\n@@ -10,6 +10,6 @@\n     payload: id,\n });\n \n export const resetUsersListAction = () => ({\n-    type: 'resetUsersList',\n+    type: types.RESET_USERS_LIST,\n });\n"
+                },
+                {
+                    "date": 1695391917589,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,16 @@\n+import types from './types';\n+import \n+\n+export const addUserAction = item => ({\n+    type: types.ADD_USER,\n+    payload: item,\n+});\n+\n+export const removeUserAction = id => ({\n+    type: types.REMOVE_USER,\n+    payload: id,\n+});\n+\n+export const resetUsersListAction = () => ({\n+    type: types.RESET_USERS_LIST,\n+});\n"
+                },
+                {
+                    "date": 1695391922717,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import types from './types';\n-import \n+import {store}\n \n export const addUserAction = item => ({\n     type: types.ADD_USER,\n     payload: item,\n@@ -13,19 +13,4 @@\n \n export const resetUsersListAction = () => ({\n     type: types.RESET_USERS_LIST,\n });\n-import types from './types';\n-\n-export const addUserAction = item => ({\n-    type: types.ADD_USER,\n-    payload: item,\n-});\n-\n-export const removeUserAction = id => ({\n-    type: types.REMOVE_USER,\n-    payload: id,\n-});\n-\n-export const resetUsersListAction = () => ({\n-    type: types.RESET_USERS_LIST,\n-});\n"
+                },
+                {
+                    "date": 1695391930207,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import types from './types';\n-import {store}\n+import { store } from '../store';\n \n export const addUserAction = item => ({\n     type: types.ADD_USER,\n     payload: item,\n"
+                },
+                {
+                    "date": 1695391937832,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,4 +13,6 @@\n \n export const resetUsersListAction = () => ({\n     type: types.RESET_USERS_LIST,\n });\n+\n+export user\n"
+                },
+                {
+                    "date": 1695391984232,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+\n import types from './types';\n import { store } from '../store';\n \n export const addUserAction = item => ({\n@@ -14,5 +15,5 @@\n export const resetUsersListAction = () => ({\n     type: types.RESET_USERS_LIST,\n });\n \n-export user\n+export userActions = \n"
+                },
+                {
+                    "date": 1695391989363,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import {}\n+import { bindActionCreators } from 'redux';\n \n import types from './types';\n import { store } from '../store';\n \n"
+                },
+                {
+                    "date": 1695392024745,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,20 @@\n+import { bindActionCreators } from 'redux';\n+\n+import types from './types';\n+import { store } from '../store';\n+\n+export const addUserAction = item => ({\n+    type: types.ADD_USER,\n+    payload: item,\n+});\n+\n+export const removeUserAction = id => ({\n+    type: types.REMOVE_USER,\n+    payload: id,\n+});\n+\n+export const resetUsersListAction = () => ({\n+    type: types.RESET_USERS_LIST,\n+});\n+\n+export userActions = bindActionCreators({add: addUserAction, })\n"
+                }
+            ],
+            "date": 1695391366649,
+            "name": "Commit-0",
+            "content": "\n\nexport const addUserAction = item => ({\n    type: 'addUser',\n    payload: item,\n});\n\nexport const removeUserAction = id => ({\n    type: 'removeUser',\n    payload: id,\n});\n\nexport const resetUsersListAction = () => ({\n    type: 'resetUsersList',\n});\n"
+        }
+    ]
+}

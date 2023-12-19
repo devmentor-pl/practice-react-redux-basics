@@ -1,0 +1,98 @@
+{
+    "sourceFile": "src/actions/user.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 20,
+            "patches": [
+                {
+                    "date": 1695308777145,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1695308786058,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n-const add = (item) => ({\n-  type: types.ADD_MOVIE,\n+export const add = (item) => ({\n+  type: ,\n   item,\n });\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1695309097594,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,4 @@\n+export const addUser = item => ({\n+    type: 'addUser',\n+    item,\n+});\n"
+                },
+                {
+                    "date": 1695309109888,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,4 @@\n-export const addUser = item => ({\n+export const addUserAction = item => ({\n     type: 'addUser',\n     item,\n });\n-export const add = (item) => ({\n-  type: ,\n-  item,\n\\ No newline at end of file\n-});\n"
+                },
+                {
+                    "date": 1695326184738,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n export const addUserAction = item => ({\n     type: 'addUser',\n-    item,\n+    payload: item,\n });\n"
+                },
+                {
+                    "date": 1695326640881,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n export const addUserAction = item => ({\n     type: 'addUser',\n     payload: item,\n });\n+\n+export const removeUserAction = \n"
+                },
+                {
+                    "date": 1695326650480,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,8 @@\n+export const addUserAction = item => ({\n+    type: 'addUser',\n+    payload: item,\n+});\n+\n+export const removeUserAction = users => {\n+    \n+}\n"
+                },
+                {
+                    "date": 1695326658401,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,8 @@\n+export const addUserAction = item => ({\n+    type: 'addUser',\n+    payload: item,\n+});\n+\n+export const removeUserAction = filtered => {\n+\n+}\n"
+                },
+                {
+                    "date": 1695326669394,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,21 +2,8 @@\n     type: 'addUser',\n     payload: item,\n });\n \n-export const removeUserAction = filtered => {\n-\n+export const removeUserAction = filteredUsers => {\n+    type: 'removeUser',\n+    payload: \n }\n-export const addUserAction = item => ({\n-    type: 'addUser',\n-    payload: item,\n-});\n-\n-export const removeUserAction = users => {\n-    \n-}\n-export const addUserAction = item => ({\n-    type: 'addUser',\n-    payload: item,\n-});\n-\n-export const removeUserAction = \n"
+                },
+                {
+                    "date": 1695326682892,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,8 @@\n     type: 'addUser',\n     payload: item,\n });\n \n-export const removeUserAction = filteredUsers => {\n+export const removeUserAction = filteredUsers => ({\n     type: 'removeUser',\n-    payload: \n-}\n+    payload: filteredUsers,\n+});\n"
+                },
+                {
+                    "date": 1695389481322,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,8 @@\n     type: 'addUser',\n     payload: item,\n });\n \n-export const removeUserAction = filteredUsers => ({\n+export const removeUserAction = id => ({\n     type: 'removeUser',\n-    payload: filteredUsers,\n+    payload: id,\n });\n"
+                },
+                {
+                    "date": 1695389688539,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n export const addUserAction = item => ({\n     type: 'addUser',\n-    payload: item,\n+    item,\n });\n \n export const removeUserAction = id => ({\n     type: 'removeUser',\n"
+                },
+                {
+                    "date": 1695389728457,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n export const addUserAction = item => ({\n     type: 'addUser',\n-    item,\n+    payload: item,\n });\n \n export const removeUserAction = id => ({\n     type: 'removeUser',\n"
+                },
+                {
+                    "date": 1695390146102,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,4 +6,6 @@\n export const removeUserAction = id => ({\n     type: 'removeUser',\n     payload: id,\n });\n+\n+export const remove\n"
+                },
+                {
+                    "date": 1695390157144,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,5 +7,7 @@\n     type: 'removeUser',\n     payload: id,\n });\n \n-export const remove\n+export const removeUsers = () => ({\n+    type: 'remove'\n+})\n"
+                },
+                {
+                    "date": 1695390165183,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,13 @@\n+export const addUserAction = item => ({\n+    type: 'addUser',\n+    payload: item,\n+});\n+\n+export const removeUserAction = id => ({\n+    type: 'removeUser',\n+    payload: id,\n+});\n+\n+export const removeUsers = () => ({\n+    type: 'removeUsers'\n+})\n"
+                },
+                {
+                    "date": 1695390194840,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,19 +8,6 @@\n     payload: id,\n });\n \n export const removeUsers = () => ({\n-    type: 'removeUsers'\n+    type: 'reset'\n })\n-export const addUserAction = item => ({\n-    type: 'addUser',\n-    payload: item,\n-});\n-\n-export const removeUserAction = id => ({\n-    type: 'removeUser',\n-    payload: id,\n-});\n-\n-export const removeUsers = () => ({\n-    type: 'remove'\n-})\n"
+                },
+                {
+                    "date": 1695390216384,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,6 +8,6 @@\n     payload: id,\n });\n \n export const removeUsers = () => ({\n-    type: 'reset'\n-})\n+    type: 'removeUsers',\n+});\n"
+                },
+                {
+                    "date": 1695390225495,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,7 @@\n     type: 'removeUser',\n     payload: id,\n });\n \n-export const removeUsers = () => ({\n+export const resetUsersListAction = () => ({\n     type: 'removeUsers',\n });\n"
+                },
+                {
+                    "date": 1695390232118,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,6 +8,6 @@\n     payload: id,\n });\n \n export const resetUsersListAction = () => ({\n-    type: 'removeUsers',\n+    type: 'resetUsersListAction',\n });\n"
+                },
+                {
+                    "date": 1695390416407,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,6 +8,6 @@\n     payload: id,\n });\n \n export const resetUsersListAction = () => ({\n-    type: 'resetUsersListAction',\n+    type: 'resetUsersList',\n });\n"
+                }
+            ],
+            "date": 1695308777145,
+            "name": "Commit-0",
+            "content": "const add = (item) => ({\n  type: types.ADD_MOVIE,\n  item,\n});"
+        }
+    ]
+}

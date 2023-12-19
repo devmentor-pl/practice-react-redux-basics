@@ -1,0 +1,134 @@
+{
+    "sourceFile": "src/store/index.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 29,
+            "patches": [
+                {
+                    "date": 1695293672449,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1695293686606,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,5 @@\n-import {createS}\n\\ No newline at end of file\n+import { createStore } from 'redux;';\n+\n+const store = createStore(() => {\n+    return 'state';\n+});\n"
+                },
+                {
+                    "date": 1695293868119,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,4 +2,6 @@\n \n const store = createStore(() => {\n     return 'state';\n });\n+\n+ex\n"
+                },
+                {
+                    "date": 1695293970324,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,5 @@\n-import { createStore } from 'redux;';\n+import { createStore } from 'redux';\n \n-const store = createStore(() => {\n+export const store = createStore(() => {\n     return 'state';\n });\n-\n-ex\n"
+                },
+                {
+                    "date": 1695294068392,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,7 @@\n import { createStore } from 'redux';\n \n+const initialSt\n+\n export const store = createStore(() => {\n     return 'state';\n });\n"
+                },
+                {
+                    "date": 1695294074426,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { createStore } from 'redux';\n \n-const initialSt\n+const INITIAL_\n \n export const store = createStore(() => {\n     return 'state';\n });\n"
+                },
+                {
+                    "date": 1695294476208,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,5 @@\n import { createStore } from 'redux';\n \n-const INITIAL_\n+const INITIAL_STATE = \n \n-export const store = createStore(() => {\n-    return 'state';\n-});\n+export const store = createStore(get);\n"
+                },
+                {
+                    "date": 1695294482472,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,7 @@\n import { createStore } from 'redux';\n \n-const INITIAL_STATE = \n+const INITIAL_STATE = []\n \n-export const store = createStore(get);\n+export const store = createStore(() => {\n+    return 'state';\n+});\n"
+                },
+                {
+                    "date": 1695294491107,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { createStore } from 'redux';\n \n-const INITIAL_STATE = []\n+const INITIAL_STATE = { getMessage: 'działa' };\n \n export const store = createStore(() => {\n     return 'state';\n });\n"
+                },
+                {
+                    "date": 1695294509080,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,5 @@\n import { createStore } from 'redux';\n \n const INITIAL_STATE = { getMessage: 'działa' };\n \n-export const store = createStore(() => {\n-    return 'state';\n-});\n+export const store = createStore(INITIAL_STATE);\n"
+                },
+                {
+                    "date": 1695294643463,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { createStore } from 'redux';\n+// import { createStore } from 'redux';\n \n-const INITIAL_STATE = { getMessage: 'działa' };\n+// const INITIAL_STATE = { getMessage: 'działa' };\n \n-export const store = createStore(INITIAL_STATE);\n+// export const store = createStore(INITIAL_STATE);\n"
+                },
+                {
+                    "date": 1695294759801,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-// import { createStore } from 'redux';\n+import { createStore } from 'redux';\n \n-// const INITIAL_STATE = { getMessage: 'działa' };\n+const INITIAL_STATE = { getMessage: 'działa' };\n \n-// export const store = createStore(INITIAL_STATE);\n+export const store = createStore(INITIAL_STATE);\n"
+                },
+                {
+                    "date": 1695294767076,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,3 @@\n import { createStore } from 'redux';\n \n-const INITIAL_STATE = { getMessage: 'działa' };\n-\n-export const store = createStore(INITIAL_STATE);\n+export const store = createStore(());\n"
+                },
+                {
+                    "date": 1695294977595,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,5 @@\n import { createStore } from 'redux';\n \n-export const store = createStore(());\n+const initState = \n+\n+export const store = createStore(() => 'działa');\n"
+                },
+                {
+                    "date": 1695295004279,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n import { createStore } from 'redux';\n \n-const initState = \n+const initState = { message: 'Działa' };\n \n-export const store = createStore(() => 'działa');\n+export const store = createStore(reducer);\n"
+                },
+                {
+                    "date": 1695295014944,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import { createStore } from 'redux';\n \n const initState = { message: 'Działa' };\n+const reducer = (state = initState)\n \n export const store = createStore(reducer);\n"
+                },
+                {
+                    "date": 1695295023036,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,8 @@\n+import { createStore } from 'redux';\n+\n+const initState = { message: 'Działa' };\n+const reducer = (state = initState, action) => {\n+  \n+}\n+\n+export const store = createStore(reducer);\n"
+                },
+                {
+                    "date": 1695295031621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { createStore } from 'redux';\n \n const initState = { message: 'Działa' };\n const reducer = (state = initState, action) => {\n-  \n+  default: return \n }\n \n export const store = createStore(reducer);\n"
+                },
+                {
+                    "date": 1695295045130,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,8 @@\n+import { createStore } from 'redux';\n+\n+const initState = { message: 'Działa' };\n+const reducer = (state = initState, action) => {\n+  return state:\n+}\n+\n+export const store = createStore(reducer);\n"
+                },
+                {
+                    "date": 1695295062447,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,22 +1,8 @@\n import { createStore } from 'redux';\n \n-const initState = { message: 'Działa' };\n+const initState = { messagggge: 'Działa' };\n const reducer = (state = initState, action) => {\n-  return state:\n-}\n+    return state;\n+};\n \n export const store = createStore(reducer);\n-import { createStore } from 'redux';\n-\n-const initState = { message: 'Działa' };\n-const reducer = (state = initState, action) => {\n-  default: return \n-}\n-\n-export const store = createStore(reducer);\n-import { createStore } from 'redux';\n-\n-const initState = { message: 'Działa' };\n-const reducer = (state = initState)\n-\n-export const store = createStore(reducer);\n"
+                },
+                {
+                    "date": 1695295257685,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,3 @@\n+import { createStore } from 'redux';\n+\n+\n"
+                },
+                {
+                    "date": 1695295362329,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,7 @@\n import { createStore } from 'redux';\n \n-\n-import { createStore } from 'redux';\n-\n-const initState = { messagggge: 'Działa' };\n+const initState = { message: 'Działa' };\n const reducer = (state = initState, action) => {\n     return state;\n };\n \n"
+                },
+                {
+                    "date": 1695295460100,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { createStore } from 'redux';\n \n-const initState = { message: 'Działa' };\n+const initState = { message: 'Działa', new };\n const reducer = (state = initState, action) => {\n     return state;\n };\n \n"
+                },
+                {
+                    "date": 1695295466688,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { createStore } from 'redux';\n \n-const initState = { message: 'Działa', new };\n+const initState = { message: 'Działa', time: new Date() };\n const reducer = (state = initState, action) => {\n     return state;\n };\n \n"
+                },
+                {
+                    "date": 1695295599778,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import { createStore } from 'redux';\n \n const initState = { message: 'Działa', time: new Date() };\n const reducer = (state = initState, action) => {\n+    \n     return state;\n };\n \n export const store = createStore(reducer);\n"
+                },
+                {
+                    "date": 1695295610119,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,11 @@\n import { createStore } from 'redux';\n \n const initState = { message: 'Działa', time: new Date() };\n const reducer = (state = initState, action) => {\n-    \n+    switch(action.type) {\n+      \n+    }\n     return state;\n };\n \n export const store = createStore(reducer);\n"
+                },
+                {
+                    "date": 1695295618109,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,12 @@\n import { createStore } from 'redux';\n \n const initState = { message: 'Działa', time: new Date() };\n const reducer = (state = initState, action) => {\n-    switch(action.type) {\n-      \n+    switch (action.type) {\n+        \n+        default:\n+            return state;\n     }\n-    return state;\n };\n \n export const store = createStore(reducer);\n"
+                },
+                {
+                    "date": 1695295625268,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n const initState = { message: 'Działa', time: new Date() };\n const reducer = (state = initState, action) => {\n     switch (action.type) {\n-        \n+        case\n         default:\n             return state;\n     }\n };\n"
+                },
+                {
+                    "date": 1695295630824,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,10 @@\n \n const initState = { message: 'Działa', time: new Date() };\n const reducer = (state = initState, action) => {\n     switch (action.type) {\n-        case 'getTime'\n+        case 'getTime':\n+          const {}\n         default:\n             return state;\n     }\n };\n"
+                },
+                {
+                    "date": 1695296046288,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,13 @@\n+import { createStore } from 'redux';\n+\n+const initState = { message: 'Działa', time: new Date() };\n+const reducer = (state = initState, action) => {\n+    switch (action.type) {\n+      case 'getCurrentTime':\n+        return {...state, time: new Date()}\n+        default:\n+            return state;\n+    }\n+};\n+\n+export const store = createStore(reducer);\n"
+                }
+            ],
+            "date": 1695293672449,
+            "name": "Commit-0",
+            "content": "import {createS}"
+        }
+    ]
+}

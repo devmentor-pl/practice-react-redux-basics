@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/time/reducer.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1695298150807,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1695298150807,
+            "name": "Commit-0",
+            "content": "const initState = { message: 'Działa', time: new Date() };\nconst reducer = (state = initState, action) => {\n    switch (action.type) {\n        case 'getCurrentTime':\n            return { ...state, time: new Date() };\n        default:\n            return state;\n    }\n};\n"
+        }
+    ]
+}

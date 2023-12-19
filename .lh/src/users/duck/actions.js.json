@@ -1,0 +1,42 @@
+{
+    "sourceFile": "src/users/duck/actions.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1695297579208,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1695297585264,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +0,0 @@\n-const \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1695297823377,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,1 @@\n+import types\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1695297832984,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,5 @@\n-import types\n\\ No newline at end of file\n+import types from \"./types\";\n+\n+const add = item => {\n+  \n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1695297850558,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,5 @@\n+import types from \"./types\";\n+\n+const add = user => {\n+  type\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1695297857169,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,5 @@\n-import types from \"./types\";\n+import types from './types';\n \n const add = user => {\n-  type\n-}\n-import types from \"./types\";\n-\n-const add = item => {\n-  \n\\ No newline at end of file\n-}\n+    types.ADD_USER, user;\n+};\n"
+                },
+                {
+                    "date": 1695297866819,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,4 +2,8 @@\n \n const add = user => {\n     types.ADD_USER, user;\n };\n+\n+export default {\n+  \n+}\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1695297579208,
+            "name": "Commit-0",
+            "content": "const "
+        }
+    ]
+}

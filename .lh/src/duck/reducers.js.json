@@ -1,0 +1,54 @@
+{
+    "sourceFile": "src/duck/reducers.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1695390862179,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1695390871461,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,4 +14,6 @@\n         default:\n             return state;\n     }\n };\n+\n+export default reducer;\n"
+                },
+                {
+                    "date": 1695391229290,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n+\n+\n const initState = { message: 'Działa', time: new Date(), users: [] };\n const reducer = (state = initState, action) => {\n     switch (action.type) {\n         case 'getCurrentTime':\n"
+                },
+                {
+                    "date": 1695391236173,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n+import actions\n \n-\n const initState = { message: 'Działa', time: new Date(), users: [] };\n const reducer = (state = initState, action) => {\n     switch (action.type) {\n         case 'getCurrentTime':\n"
+                },
+                {
+                    "date": 1695391241556,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import actions\n+import types from \"./types\";\n \n const initState = { message: 'Działa', time: new Date(), users: [] };\n const reducer = (state = initState, action) => {\n     switch (action.type) {\n"
+                },
+                {
+                    "date": 1695391254804,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n const initState = { message: 'Działa', time: new Date(), users: [] };\n const reducer = (state = initState, action) => {\n     switch (action.type) {\n-        case 'getCurrentTime':\n+        case types.:\n             return { ...state, time: new Date() };\n         case 'addUser':\n             return { ...state, users: [...state.users, { name: action.payload, id: crypto.randomUUID() }] };\n         case 'removeUser':\n"
+                },
+                {
+                    "date": 1695391410969,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,11 +2,11 @@\n \n const initState = { message: 'Działa', time: new Date(), users: [] };\n const reducer = (state = initState, action) => {\n     switch (action.type) {\n-        case types.:\n+        case types.GET_CURRENT_TIME:\n             return { ...state, time: new Date() };\n-        case 'addUser':\n+        case 'types.':\n             return { ...state, users: [...state.users, { name: action.payload, id: crypto.randomUUID() }] };\n         case 'removeUser':\n             const { payload: id } = action;\n             const newUsers = state.users.filter(user => user.id !== id);\n"
+                },
+                {
+                    "date": 1695391416766,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n const reducer = (state = initState, action) => {\n     switch (action.type) {\n         case types.GET_CURRENT_TIME:\n             return { ...state, time: new Date() };\n-        case 'types.':\n+        case types.ADD_USER:\n             return { ...state, users: [...state.users, { name: action.payload, id: crypto.randomUUID() }] };\n         case 'removeUser':\n             const { payload: id } = action;\n             const newUsers = state.users.filter(user => user.id !== id);\n"
+                },
+                {
+                    "date": 1695391422485,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n         case types.GET_CURRENT_TIME:\n             return { ...state, time: new Date() };\n         case types.ADD_USER:\n             return { ...state, users: [...state.users, { name: action.payload, id: crypto.randomUUID() }] };\n-        case 'removeUser':\n+        case types.re:\n             const { payload: id } = action;\n             const newUsers = state.users.filter(user => user.id !== id);\n             return { ...state, users: newUsers };\n         case 'resetUsersList':\n"
+                },
+                {
+                    "date": 1695391427733,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,13 +6,13 @@\n         case types.GET_CURRENT_TIME:\n             return { ...state, time: new Date() };\n         case types.ADD_USER:\n             return { ...state, users: [...state.users, { name: action.payload, id: crypto.randomUUID() }] };\n-        case types.re:\n+        case types.REMOVE_USER:\n             const { payload: id } = action;\n             const newUsers = state.users.filter(user => user.id !== id);\n             return { ...state, users: newUsers };\n-        case 'resetUsersList':\n+        case types.:\n             return { ...state, users: [] };\n         default:\n             return state;\n     }\n"
+                }
+            ],
+            "date": 1695390862179,
+            "name": "Commit-0",
+            "content": "const initState = { message: 'Działa', time: new Date(), users: [] };\nconst reducer = (state = initState, action) => {\n    switch (action.type) {\n        case 'getCurrentTime':\n            return { ...state, time: new Date() };\n        case 'addUser':\n            return { ...state, users: [...state.users, { name: action.payload, id: crypto.randomUUID() }] };\n        case 'removeUser':\n            const { payload: id } = action;\n            const newUsers = state.users.filter(user => user.id !== id);\n            return { ...state, users: newUsers };\n        case 'resetUsersList':\n            return { ...state, users: [] };\n        default:\n            return state;\n    }\n};\n"
+        }
+    ]
+}

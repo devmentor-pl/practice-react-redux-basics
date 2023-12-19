@@ -1,0 +1,46 @@
+{
+    "sourceFile": "src/users/duck/reducers.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1695297653857,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1695297672972,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,5 @@\n-import types from \"./types\";\n+import types from './types';\n \n+const INITIAL_STATE = {\n+    users: [],\n+};\n"
+                },
+                {
+                    "date": 1695297679207,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,4 +2,6 @@\n \n const INITIAL_STATE = {\n     users: [],\n };\n+\n+const usersReducer = \n"
+                },
+                {
+                    "date": 1695297687664,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,5 +3,5 @@\n const INITIAL_STATE = {\n     users: [],\n };\n \n-const usersReducer = \n+const usersReducer = (state = INITIAL_STATE, )\n"
+                },
+                {
+                    "date": 1695297693552,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,5 +3,7 @@\n const INITIAL_STATE = {\n     users: [],\n };\n \n-const usersReducer = (state = INITIAL_STATE, )\n+const usersReducer = (state = INITIAL_STATE, action) => {\n+  \n+}\n"
+                },
+                {
+                    "date": 1695297730257,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,6 +4,8 @@\n     users: [],\n };\n \n const usersReducer = (state = INITIAL_STATE, action) => {\n-  \n+  case 'addUser': {\n+    return { ...state, users: [...state.users, { id: crypto.randomUUID(), name: payload }] };\n }\n+}\n"
+                },
+                {
+                    "date": 1695297736573,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,6 +4,6 @@\n     users: [],\n };\n \n const usersReducer = (state = INITIAL_STATE, action) => {\n-  \n+  switch(action)\n }\n"
+                },
+                {
+                    "date": 1695297766145,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,6 +13,5 @@\n             return state;\n     }\n };\n \n-\n-export default users\n\\ No newline at end of file\n+export default usersReducer;\n"
+                }
+            ],
+            "date": 1695297653857,
+            "name": "Commit-0",
+            "content": "import types from \"./types\";\n\n"
+        }
+    ]
+}

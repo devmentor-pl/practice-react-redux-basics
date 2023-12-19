@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/time/reducers.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1695298177358,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1695298183320,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,4 +6,6 @@\n         default:\n             return state;\n     }\n };\n+\n+export default timeReducer;\n"
+                }
+            ],
+            "date": 1695298177358,
+            "name": "Commit-0",
+            "content": "const initState = { message: 'Działa', time: new Date() };\nconst timeReducer = (state = initState, action) => {\n    switch (action.type) {\n        case 'getCurrentTime':\n            return { ...state, time: new Date() };\n        default:\n            return state;\n    }\n};\n"
+        }
+    ]
+}
