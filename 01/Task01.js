@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Subject from './../src/libs/Subject';
 
 const Task01 = () => {
     const [time, setTime] = useState(0);
     const [tagName, setTagName] = useState('??');
     const [cursorPosition, setCursorPosition] = useState('[?,?]');
+
+    const subject = new Subject
 
     const setEventTime = ({timeStamp}) => {
         setTime( parseInt(timeStamp / 1000) );
@@ -18,14 +20,22 @@ const Task01 = () => {
         setCursorPosition(`[${pageX},${pageY}]`);
     }
 
+    useEffect(() => {
+        subject.subscribe(setEventTime)
+        subject.subscribe(setEventTagName)
+        subject.subscribe(setEventCursorPosition)
+    })
+
+    const clickHandler = (event) => {
+        subject.notify(event)
+    }
+
     return (
         <section>
             <h1>Task 1</h1>
             
             <div onClick={ event => {
-                setEventTime(event);
-                setEventTagName(event);
-                setEventCursorPosition(event);
+                clickHandler(event)
             }}>
                 <p>
                     <strong>Kliknij wybrany element:</strong> <a>link</a>, <button>button</button>, <span>span</span>
