@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStore, useSelector } from 'react-redux'; 
+import { useSelector } from 'react-redux'; 
 
 const Task02 = () => {
 

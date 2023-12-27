@@ -6,6 +6,7 @@ class Subject {
     subscribe(callback) {
         if(typeof callback === 'function') {
             this.observersList.push(callback);
+            console.log(this.observersList);
             return true;
         }
 
