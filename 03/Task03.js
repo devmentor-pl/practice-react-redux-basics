@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import getTimeAction from '../src/actions/time';
 
 const Task03 = () => {
     const time = useSelector(({time = null}) => time);
@@ -10,7 +11,7 @@ const Task03 = () => {
             <h1>Task 3</h1>
             <div>
                 <time>{ time ? time.toLocaleTimeString() : '00:00:00' }</time>
-                <button onClick={ () => dispatch( {type: 'getCurrentTime'} )}>get current time</button>
+                <button onClick={ () => dispatch(getTimeAction())}>get now time</button>
             </div>
         </section>
     );
