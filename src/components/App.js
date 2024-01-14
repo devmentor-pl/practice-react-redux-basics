@@ -14,6 +14,10 @@ const reducer = (state = {}, action) => {
             return {
                 message: 'Działa',
             };
+            case 'getCurrentTime': 
+            return {
+               ...state, time: new Date()
+            }
         default:
             return state;
     }
@@ -21,6 +25,7 @@ const reducer = (state = {}, action) => {
 
   const store = createStore(reducer);
   store.dispatch({ type: 'getMessage' })
+  store.dispatch({ type: 'getCurrentTime'})
 
 const App = () => {
     console.log(store.getState())
@@ -28,8 +33,7 @@ const App = () => {
         <Provider store={store}>
             <Task01 />
             <Task02 />
-            {/* <Task02 /> */}
-            {/* <Task03 /> */}
+            <Task03 />
             {/* <Task04 /> */}
             {/* <Task05 /> */}
         </Provider>
