@@ -18,15 +18,20 @@ const Task01 = () => {
         setCursorPosition(`[${pageX},${pageY}]`);
     }
 
+    const subject = new Subject();
+
+    const ob1 = subject.subscribe(setEventTime);
+    const ob2 = subject.subscribe(setEventTagName);
+    const ob3 = subject.subscribe(setEventCursorPosition)
+
     return (
         <section>
             <h1>Task 1</h1>
             
             <div onClick={ event => {
-                setEventTime(event);
-                setEventTagName(event);
-                setEventCursorPosition(event);
+               const notify = subject.notify(event)
             }}>
+
                 <p>
                     <strong>Kliknij wybrany element:</strong> <a>link</a>, <button>button</button>, <span>span</span>
                 </p>
