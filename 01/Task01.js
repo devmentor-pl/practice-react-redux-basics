@@ -29,7 +29,7 @@ const Task01 = () => {
             <h1>Task 1</h1>
             
             <div onClick={ event => {
-               const not = subject.notify(event)
+               const notify = subject.notify(event)
             }}>
 
                 <p>
