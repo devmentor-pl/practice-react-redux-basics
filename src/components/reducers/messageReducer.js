@@ -1,6 +1,18 @@
-const initialState = { message: 'Działa!' };
+const initialState = { 
+    message: 'Działa!',
+    time: new Date()
+};
+
 const messageReducer = (state = initialState, action) => {
-    return state;
+    switch(action.type) {
+        case 'getCurrentTime':
+            return {
+                ...state,
+                time: new Date()
+            };
+        default:
+            return state;
+    }
 };
 
 export {messageReducer};
