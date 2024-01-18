@@ -1,10 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Subject from './../src/libs/Subject';
 
 const Task01 = () => {
     const [time, setTime] = useState(0);
     const [tagName, setTagName] = useState('??');
     const [cursorPosition, setCursorPosition] = useState('[?,?]');
+    const eventSubject = new Subject();
+
+    useEffect(() => {
+        eventSubject.subscribe(setEventTime);
+        eventSubject.subscribe(setEventTagName);
+        eventSubject.subscribe(setEventCursorPosition);
+    }, []);
 
     const setEventTime = ({timeStamp}) => {
         setTime( parseInt(timeStamp / 1000) );
@@ -17,6 +24,10 @@ const Task01 = () => {
     const setEventCursorPosition = ({pageX, pageY}) => {
         setCursorPosition(`[${pageX},${pageY}]`);
     }
+
+    const handleEvent = (event) => {
+        eventSubject.notify(event);
+    };
 
     return (
         <section>
