@@ -1,6 +1,6 @@
 const initialState = { 
     message: 'Działa!',
-    time: new Date()
+    time: null
 };
 
 const messageReducer = (state = initialState, action) => {
