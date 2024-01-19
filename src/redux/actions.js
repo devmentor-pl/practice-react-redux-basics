@@ -11,3 +11,9 @@ export const removeUser = (id) => {
         payload: id
     };
 };
+
+export const removeAllUsers = () => {
+    return {
+        type: 'REMOVE_ALL_USERS'
+    };
+};

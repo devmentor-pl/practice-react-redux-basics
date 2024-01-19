@@ -1,11 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import UserItem from './UserItem';
-import { addUser } from './actions'
+import { addUser } from '../redux/actions'
+import { removeAllUsers } from '../redux/actions'
 
 const mapStateToProps = (state) => ({
     users: state.users.users
 });
+  
+const mapDispatchToProps = {
+    addUser,
+    removeAllUsers
+};
 
 class UserList extends React.Component {
     state = { newUser: '' };
@@ -14,6 +20,10 @@ class UserList extends React.Component {
         e.preventDefault();
         this.props.addUser(this.state.newUser);
         this.setState({ newUser: '' });
+    }
+
+    handleRemoveAll = () => {
+        this.props.removeAllUsers();
     }
 
     render() {
@@ -34,4 +44,4 @@ class UserList extends React.Component {
     }
 }
 
-export default connect(mapStateToProps, { addUser })(UserList);
+export default connect(mapStateToProps, mapDispatchToProps)(UserList);
