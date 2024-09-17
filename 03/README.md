@@ -6,7 +6,7 @@
 
 Tym razem do naszego Magazynu dodamy kolejny element. Będzie to`state`, który przechowuje informacje o aktualnej dacie, tj. `new Date()`. Jeśli wykonałeś prawidłowo poprzednie zadanie, to odkomentowanie komponentu `<Task03 />` w `./src/components/App.js` nie powinno wywołać żadnego błędu. 
 
-Jeśli jeszcze tego nie zrobiłeś, to teraz będzie odpowiedni moment, aby utworzyć wartości początkowe dla naszego stanu (ang. state). Pamiętaj, że poprzednie zadanie również musi działać prawidłowo, więc wartości początkowe powinny wyglądać mniej więcej w taki sposób:
+Jeśli jeszcze tego nie zrobiłeś, to teraz będzie odpowiedni moment, aby utworzyć wartości początkowe dla naszego stanu (ang. state). Pamiętaj, że poprzednie zadanie również musi działać prawidłowo, więc wartości początkowe powinny wyglądać mniej więcej w taki sposób::
 ```
 {
     message: 'Działa!',
