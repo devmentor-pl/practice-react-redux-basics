@@ -5,7 +5,6 @@ const Task04 = () => {
     return (
         <section>
             <h1>Task 4</h1>
-
             <UserList />
         </section>
     );

@@ -6,32 +6,30 @@ const Task01 = () => {
     const [tagName, setTagName] = useState('??');
     const [cursorPosition, setCursorPosition] = useState('[?,?]');
 
+    const subject = new Subject();
+
     const setEventTime = ({timeStamp}) => {
         setTime( parseInt(timeStamp / 1000) );
     }
+    subject.subscribe(setEventTime)
 
     const setEventTagName = ({target}) => {
         setTagName(target.tagName);
     }
+    subject.subscribe(setEventTagName)
 
     const setEventCursorPosition = ({pageX, pageY}) => {
         setCursorPosition(`[${pageX},${pageY}]`);
     }
+    subject.subscribe(setEventCursorPosition)
 
     return (
         <section>
             <h1>Task 1</h1>
-            
-            <div onClick={ event => {
-                setEventTime(event);
-                setEventTagName(event);
-                setEventCursorPosition(event);
-            }}>
+            <div onClick={ event => {subject.notify(event)}}>
                 <p>
                     <strong>Kliknij wybrany element:</strong> <a>link</a>, <button>button</button>, <span>span</span>
                 </p>
-
-
                 <ul>
                     <li>time: { time }s</li>
                     <li>tagName: { tagName }</li>
