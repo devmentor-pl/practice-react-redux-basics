@@ -10,26 +10,30 @@ import Task05 from './../../05/Task05';
 
 const initState = {
 	message: 'Działa!',
+	time: new Date(),
 };
 
 const reducer = (state = initState, action) => {
-	return state;
+	switch (action.type) {
+		case 'getCurrentTime':
+			return { ...state, time: new Date() };
+		default:
+			return state;
+	}
 };
 
-const store = createStore(reducer);
+const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 console.log(store.getState());
 
 const App = () => {
 	return (
-		<>
-			<Provider store={store}>
+		<Provider store={store}>
 			{/* <Task01 /> */}
-				<Task02 />
-			{/* <Task03 /> */}
+			{/* <Task02 /> */}
+			<Task03 />
 			{/* <Task04 /> */}
 			{/* <Task05 /> */}
-			</Provider>
-		</>
+		</Provider>
 	);
 };
 
