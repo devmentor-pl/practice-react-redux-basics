@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import UserItem from './UserItem';
+import { addUserAction } from '../actions/userForm';
 
 class UserList extends React.Component {
 	state = {
@@ -49,7 +50,7 @@ const mapStateToProps = (state, props) => {
 };
 
 const mapActionToProps = dispatch => ({
-	onAddUser: name => dispatch({ type: 'addUser', payload: name }),
+	onAddUser: name => dispatch(addUserAction(name)),
 });
 
 export default connect(mapStateToProps, mapActionToProps)(UserList);
